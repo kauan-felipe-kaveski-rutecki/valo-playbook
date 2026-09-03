@@ -1,51 +1,71 @@
-# 🎯 ValoPlaybook
+# ValoPlaybook
 
-> Guia tático de Valorant com consulta de agentes, armas e mapas via Valorant-API e área de estudo de desempenho para iniciantes.
+### **Autor:** Kauan Felipe Kaveski Rutecki
 
----
+O **ValoPlaybook** é uma aplicação web desenvolvida com o objetivo de simplificar o aprendizado e a evolução tática de jogadores iniciantes e intermediários do jogo **Valorant**.
 
-## 👤 Autor
-- **Nome:** Kauan Felipe Kaveski Rutecki
-- **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas
-- **Instituição:** UTFPR - Câmpus Guarapuava
-- **Repositório:** `valo-playbook`
+A aplicação permite que o usuário pesquise agentes, armas e mapas do jogo, consulte suas informações oficiais e monte um painel de estudo personalizado focando nos seus mapas de maior dificuldade.
 
----
+O frontend da aplicação será desenvolvido utilizando **HTML, CSS e JavaScript**, com suporte de um **Framework CSS** (Bootstrap ou Tailwind CSS) para a construção da interface e layout responsivo.
 
-## 📌 Sobre o Projeto
-O **ValoPlaybook** é uma aplicação web desenvolvida como laboratório prático para a disciplina de Frameworks e CSS. A plataforma visa simplificar o aprendizado de jogadores iniciantes e intermediários de Valorant, exibindo dados oficiais consumidos da **Valorant-API** e fornecendo uma área logada personalizada para mapeamento de dificuldades e estudo de mapas.
+Os dados são consumidos em tempo real da **Valorant-API** pública, e a persistência de preferências do jogador é realizada via **LocalStorage**.
 
 ---
 
 ## 📚 Documentação do Projeto
+
 Para entender o propósito, escopo e estrutura técnica da aplicação, consulte os documentos abaixo:
-- 📄 [Product Requirements Document (PRD)](docs/prd.md) — Descrição do sistema, objetivo, atores e histórias de usuário.
-- 🛠️ [Especificação Técnica](docs/architecture.md) — Modelo de dados, diagrama ER e detalhamento das entidades.
+
+* [📄 Product Requirements Document (PRD)](./docs/prd.md) — Descrição do sistema, objetivo, atores e histórias de usuário.
+* [🛠️ Especificação Técnica](./docs/architecture.md) — Modelo de dados e relacionamentos das entidades da aplicação.
+* [🎨 Design System](#) — Identidade visual, cores, tipografia e padrões de componentes. *(em breve)*
+* [🖼️ Protótipo no Figma](#) — Protótipo das principais telas da aplicação.
+
+---
+
+## 🎨 Design
+
+O projeto contará com uma interface visual inspirada no universo do Valorant, priorizando clareza, acessibilidade e responsividade entre dispositivos.
+
+O protótipo das interfaces será desenvolvido no **Figma**, contemplando as versões:
+
+* 📱 Mobile
+* 💻 Desktop
+
+### Protótipo no Figma
+
+*(link será adicionado posteriormente)*
 
 ---
 
 ## 🌐 Site em Produção
-*Status:* Em desenvolvimento.  
-A aplicação será disponibilizada publicamente através do **GitHub Pages**.
+
+**Ainda em desenvolvimento.**
+
+O projeto será disponibilizado posteriormente por meio do GitHub Pages.
 
 ---
 
 ## 💻 Tecnologias e Dependências
 
 ### Frontend
-- **HTML5** — Estruturação semântica das páginas.
-- **CSS3** — Estilização personalizada, Flexbox, CSS Grid e variáveis CSS.
-- **JavaScript (ES6+)** — Lógica de aplicação e manipulação do DOM.
-- **Framework CSS** — Framework responsivo (Bootstrap ou Tailwind CSS) para auxílio na interface.
+
+* **HTML5** — Estrutura semântica das páginas.
+* **CSS3** — Estilização complementar, Flexbox, Grid e variáveis CSS.
+* **JavaScript (ES6+)** — Lógica de aplicação, manipulação do DOM e requisições assíncronas.
+* **Framework CSS** — Framework utilizado para componentes e layout responsivo.
 
 ### Consumo de Dados & Persistência
-- **Valorant-API** — API REST pública oficial para consulta de mapas, agentes e armas.
-- **LocalStorage** — Persistência de dados do usuário e preferências de estudo no navegador.
-- **Mock JSON** — Dados estáticos estruturados para curadoria de VODs e dicas táticas.
 
-### Ferramentas de Desenvolvimento
-- **Git & GitHub** — Controle de versão e hospedagem do código-fonte.
-- **VS Code** — Editor de código-fonte.
+* **Valorant-API** — API REST pública oficial para consulta de dados de agentes, mapas e armas.
+* **LocalStorage** — Persistência de dados cadastrais e preferências de estudo no navegador.
+* **Mock JSON** — Dados estáticos para curadoria de VODs e dicas táticas.
+
+### Ferramentas de desenvolvimento
+
+* **Git**
+* **GitHub**
+* **VS Code**
 
 ---
 
@@ -66,74 +86,95 @@ valo-playbook/
 ├── pages/
 ├── index.html
 └── README.md
+```
 
-📱 Funcionalidades
-🔎 Consulta Geral: Catálogo completo de agentes, armas e mapas via Valorant-API.
+A organização poderá ser ajustada durante o desenvolvimento, mantendo o princípio de modularização e separação de responsabilidades.
 
-🎯 Filtros Táticos: Filtragem de armas por categoria e mapas por perfil de jogo.
+---
 
-📝 Cadastro e Autenticação: Formulários com validação para criação de conta e login.
+## 🚀 Manual de Execução
 
-📌 Mapeamento de Dificuldades: Painel restrito para o jogador registrar seus mapas de menor desempenho.
+### 1. Clonar o repositório
 
-🎥 Central de Estudos: Exibição de VODs e dicas táticas personalizadas para os mapas selecionados.
+```bash
+git clone [https://github.com/seu-usuario/valo-playbook.git](https://github.com/seu-usuario/valo-playbook.git)
+```
 
-💾 Persistência Local: Armazenamento das preferências do usuário via LocalStorage.
+### 2. Acessar o diretório do projeto
 
-📝 Checklist | Indicadores de Desempenho (24 IDs)
-RA1 — Documentação, Versionamento e Estrutura
-[x] ID01 - Criar repositório público no GitHub seguindo o padrão dashed-case.
+```bash
+cd valo-playbook
+```
 
-[x] ID02 - Documentar a ideia do projeto, atores e Histórias de Usuário no arquivo docs/prd.md.
+### 3. Executar o frontend
 
-[x] ID03 - Documentar o Modelo de Dados e Diagrama ER Mermaid no arquivo docs/architecture.md.
+O frontend poderá ser executado utilizando a extensão **Live Server** do Visual Studio Code ou abrindo diretamente o arquivo `index.html` em seu navegador.
 
-[ ] ID04 - Manter o arquivo README.md atualizado com a apresentação e o checklist dos 24 IDs.
+---
 
-[ ] ID05 - Manter o histórico de commits frequente, claro e organizado.
+## 📱 Funcionalidades
 
-RA2 — HTML5 Semântico e Organização do Projeto
-[ ] ID06 - Utilizar tags semânticas do HTML5 (header, nav, main, section, article, footer).
+As principais funcionalidades previstas para o ValoPlaybook são:
 
-[ ] ID07 - Estruturar a aplicação em pelo menos 3 páginas HTML interligadas e funcionais.
+* 🔎 Pesquisa e consulta completa de agentes, armas e mapas via Valorant-API.
+* 🎯 Filtragem de armas por categoria e mapas por perfil de jogo.
+* 📝 Formulário de cadastro de usuário com validação de dados.
+* 🔐 Autenticação e login de usuários na plataforma.
+* 📌 Mapeamento e seleção dos mapas em que o jogador possui maior dificuldade.
+* 🎥 Central de estudos com dicas táticas e VODs recomendados.
+* 💾 Persistência de dados do usuário e preferências via LocalStorage.
+* 📱 Interface responsiva para mobile e desktop.
 
-[ ] ID08 - Configurar adequadamente as meta tags essenciais (charset, viewport, title, description).
+---
 
-[ ] ID09 - Organizar a estrutura de pastas do projeto de forma limpa (css/, js/, assets/, docs/).
+## 📝 Checklist | Indicadores de Desempenho
 
-RA3 — CSS3, Responsividade e Framework Visual
-[ ] ID10 - Definir uma identidade visual coesa com paleta de cores, tipografia e espaçamentos padronizados.
+### RA1 — Documentação, Versionamento e Estrutura
 
-[ ] ID11 - Utilizar recursos de layout moderno com CSS Grid e/ou Flexbox.
+* [x] ID 01 — Criar repositório público no GitHub seguindo o padrão *dashed-case*.
+* [x] ID 02 — Documentar a ideia do projeto, atores e Histórias de Usuário no arquivo `docs/prd.md`.
+* [x] ID 03 — Documentar o Modelo de Dados e Diagrama ER Mermaid no arquivo `docs/architecture.md`.
+* [ ] ID 04 — Manter o arquivo `README.md` atualizado com a apresentação e o checklist dos 24 IDs.
+* [ ] ID 05 — Manter o histórico de commits frequente, claro e organizado.
 
-[ ] ID12 - Aplicar responsividade para navegação em dispositivos móveis (Mobile First / Media Queries).
+### RA2 — HTML5 Semântico e Organização do Projeto
 
-[ ] ID13 - Utilizar variáveis CSS (CSS Custom Properties) ou reutilização de classes utilitárias.
+* [ ] ID 06 — Utilizar tags semânticas do HTML5 (`header`, `nav`, `main`, `section`, `article`, `footer`).
+* [ ] ID 07 — Estruturar a aplicação em pelo menos 3 páginas HTML interligadas e funcionais.
+* [ ] ID 08 — Configurar adequadamente as *meta tags* essenciais (`charset`, `viewport`, `title`, `description`).
+* [ ] ID 09 — Organizar a estrutura de pastas do projeto de forma limpa (`css/`, `js/`, `assets/`, `docs/`).
 
-[ ] ID14 - Integrar e utilizar um Framework CSS ou metodologia de estilização no projeto.
+### RA3 — CSS3, Responsividade e Framework Visual
 
-RA4 — Formulários e Validações
-[ ] ID15 - Implementar formulário de cadastro de usuário com diferentes tipos de input e validação visual.
+* [ ] ID 10 — Definir uma identidade visual coesa com paleta de cores, tipografia e espaçamentos padronizados.
+* [ ] ID 11 — Utilizar recursos de layout moderno com CSS Grid e/ou Flexbox.
+* [ ] ID 12 — Aplicar responsividade para navegação em dispositivos móveis (*Mobile First* / *Media Queries*).
+* [ ] ID 13 — Utilizar variáveis CSS (*CSS Custom Properties*) ou reutilização de classes utilitárias.
+* [ ] ID 14 — Integrar e utilizar um Framework CSS ou metodologia de estilização no projeto.
 
-[ ] ID16 - Implementar formulário de login/autenticação funcional.
+### RA4 — Formulários e Validações
 
-[ ] ID17 - Implementar formulário ou controle interativo para seleção de mapas de maior dificuldade pelo usuário.
+* [ ] ID 15 — Implementar formulário de cadastro de usuário com diferentes tipos de `input` e validação visual.
+* [ ] ID 16 — Implementar formulário de login/autenticação funcional.
+* [ ] ID 17 — Implementar formulário ou controle interativo para seleção de mapas de maior dificuldade pelo usuário.
 
-RA5 — Consumo de APIs e Manipulação do DOM
-[ ] ID18 - Consumir dados assíncronos da Valorant-API utilizando Fetch API ou biblioteca equivalente.
+### RA5 — Consumo de APIs e Manipulação do DOM
 
-[ ] ID19 - Renderizar elementos dinamicamente na tela com base na resposta da API externa.
+* [ ] ID 18 — Consumir dados assíncronos da **Valorant-API** utilizando Fetch API ou biblioteca equivalente.
+* [ ] ID 19 — Renderizar elementos dinamicamente na tela com base na resposta da API externa.
+* [ ] ID 20 — Tratar estados de carregamento (*loading*) e cenários de erro nas requisições da API.
+* [ ] ID 21 — Utilizar dados estáticos/simulados (Mock JSON) para exibir dicas táticas e VODs recomendados.
+* [ ] ID 22 — Simular a persistência de preferências do usuário logado através do `LocalStorage`.
 
-[ ] ID20 - Tratar estados de carregamento (loading) e cenários de erro nas requisições da API.
+### RA6 — Acessibilidade e Publicação
 
-[ ] ID21 - Utilizar dados estáticos/simulados (Mock JSON) para exibir dicas táticas e VODs recomendados.
+* [ ] ID 23 — Aplicar boas práticas de acessibilidade (atributos `alt`, contraste adequado de cores e navegação acessível).
+* [ ] ID 24 — Realizar o *deploy* e disponibilizar a aplicação em ambiente de hospedagem web (GitHub Pages/Vercel).
 
-[ ] ID22 - Simular a persistência de preferências do usuário logado através do LocalStorage.
+---
 
-RA6 — Acessibilidade e Publicação
-[ ] ID23 - Aplicar boas práticas de acessibilidade (atributos alt, contraste adequado de cores e navegação acessível).
+## 📌 Status
 
-[ ] ID24 - Realizar o deploy e disponibilizar a aplicação em ambiente de hospedagem web (GitHub Pages/Vercel).
+**Em desenvolvimento.**
 
-📌 Status
-Em desenvolvimento.
+O escopo e as funcionalidades poderão ser refinados conforme o desenvolvimento do projeto e os requisitos da disciplina.

@@ -1,29 +1,73 @@
-# Product Requirements Document (PRD)
+# ValoPlaybook — Product Requirements Document
 
-## Identificação
-- **Aluno:** Kauan Felipe Kaveski Rutecki
-- **Projeto:** ValoPlaybook (`valo-playbook`)
+## 1. Identificação
 
----
+**Autor:** Kauan Felipe Kaveski Rutecki
 
-## Descrição
-O **ValoPlaybook** é um guia tático interativo desenvolvido para auxiliar jogadores iniciantes e intermediários de Valorant no aprendizado do jogo. O sistema resolve a alta curva de aprendizado inicial agrupando informações vitais em um só lugar — como dicas sobre o papel dos agentes, utilidade das armas de acordo com a distância e características táticas dos mapas —, consumindo dados oficiais em tempo real via **Valorant-API**. 
+**Nome do projeto:** ValoPlaybook
 
-Para além da consulta pública, a aplicação resolve a falta de foco no treino individual: ao criar uma conta, o jogador pode registrar em quais mapas possui mais dificuldade e receber uma curadoria de orientações táticas e links de partidas recomendadas (VODs) para estudo direcionado.
+**Tema:** Guia Tático e Mapeamento de Desempenho para Valorant
 
 ---
 
-## Atores do Sistema
-- **Visitante (Usuário Anônimo):** Fã do jogo que utiliza a plataforma para consultar dados de mapas, armas e agentes, além de dicas básicas de jogabilidade.
-- **Jogador (Cliente Autenticado):** Usuário cadastrado que possui acesso ao seu painel pessoal, onde gerencia suas preferências de treino e seus mapas de maior dificuldade.
+## 2. Descrição
+
+O **ValoPlaybook** é uma aplicação web desenvolvida com o objetivo de simplificar o aprendizado e a evolução tática de jogadores iniciantes e intermediários do jogo **Valorant**.
+
+A aplicação permitirá que o usuário consulte informações completas e atualizadas sobre agentes, mapas e armas utilizando a API oficial do jogo (Valorant-API).
+
+O sistema busca centralizar o conhecimento tático em uma única interface, evitando que o jogador precise recorrer a várias wikis diferentes para entender o jogo. 
+
+Além disso, o ValoPlaybook permitirá que o usuário crie uma conta local para gerenciar um painel de estudo personalizado, onde ele poderá registrar os mapas em que possui maior dificuldade, adicionar anotações e receber recomendações de estudo focadas nos seus pontos fracos.
 
 ---
 
-## Histórias de Usuário (Escopo)
+## 3. Histórias de Usuário
 
-1. **Como Visitante**, eu quero **consultar o catálogo de agentes, armas e mapas do jogo** para **entender os atributos básicos e visualizar imagens oficiais** *(Consumo de API)*.
-2. **Como Visitante**, eu quero **filtrar armas por tipo e mapas por perfil (ex: mais favorável à defesa ou ataque)** para **aprender qual equipamento utilizar em cada situação** *(Consulta com dados estáticos/filtros)*.
-3. **Como Visitante**, eu quero **me cadastrar na plataforma fornecendo meus dados básicos** para **criar um perfil e liberar a área de estudo personalizada** *(Formulário de Cadastro)*.
-4. **Como Jogador**, eu quero **fazer login no sistema** para **acessar meu painel pessoal de evolução** *(Formulário de Autenticação)*.
-5. **Como Jogador**, eu quero **marcar os mapas em que possuo maior dificuldade de vitória** para **registrar meus pontos fracos e organizar meu foco de treino** *(Formulário/Interação de seleção)*.
-6. **Como Jogador**, eu quero **visualizar uma lista curada de dicas e links de VODs nos mapas que marquei com dificuldade** para **estudar partidas e melhorar meu desempenho tático** *(Conteúdo exclusivo do usuário logado)*.
+## US01 — Consultar catálogo do jogo
+
+**Como jogador, eu quero pesquisar e visualizar agentes, armas e mapas, para que eu possa conhecer todos os elementos do jogo e suas características básicas.**
+
+---
+
+## US02 — Visualizar informações detalhadas
+
+**Como jogador, eu quero visualizar informações detalhadas (habilidades de agentes, layouts de mapas e status de armas), para que eu possa entender melhor como utilizá-los nas minhas partidas.**
+
+---
+
+## US03 — Criar conta na plataforma
+
+**Como usuário, eu quero me cadastrar no sistema informando meu nickname, e-mail e senha, para que eu possa ter um perfil e salvar meu progresso de estudo.**
+
+---
+
+## US04 — Autenticar no sistema
+
+**Como usuário cadastrado, eu quero realizar login na plataforma, para que eu possa acessar minha área restrita e meu painel de estudo personalizado.**
+
+---
+
+## US05 — Mapear mapas de maior dificuldade
+
+**Como jogador, eu quero registrar no meu perfil os mapas nos quais tenho mais dificuldade, para que eu possa manter um histórico de onde preciso focar meus estudos.**
+
+---
+
+## US06 — Adicionar anotações de desempenho
+
+**Como jogador, eu quero poder adicionar observações e definir o nível de dificuldade em cada mapa salvo (ex: "dificuldade de defender o bomb B"), visando uma personalização total do meu estudo.**
+
+---
+
+## US07 — Remover mapa do painel de estudo
+
+**Como jogador, eu quero remover um mapa da minha lista de dificuldades, para que eu possa atualizar meu perfil conforme eu melhoro o meu desempenho no jogo.**
+
+---
+
+## US08 — Consultar dicas e táticas recomendadas
+
+**Como jogador, eu quero acessar dicas táticas e curadoria de VODs (vídeos) correspondentes aos mapas que eu salvei, para que eu possa aprender novas estratégias e corrigir meus erros.**
+
+---

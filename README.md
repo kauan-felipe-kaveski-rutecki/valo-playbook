@@ -16,7 +16,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 ## 🎨 Design
 
 - [🎨 Design System](#) - Identidade visual *(em breve)*
-- [🖼️ Protótipo no Figma](#) - Telas interativas da aplicação *(em breve)*
+- [🖼️ Protótipo no Figma](https://stitch.withgoogle.com/projects/6512120559904811507) - Telas interativas da aplicação *(em breve)*
 
 ## 🌐 Site em Produção - GitHub Pages
 

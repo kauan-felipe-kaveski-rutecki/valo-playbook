@@ -1,180 +1,81 @@
-# ValoPlaybook
+# valo-playbook
 
 ### **Autor:** Kauan Felipe Kaveski Rutecki
 
-O **ValoPlaybook** é uma aplicação web desenvolvida com o objetivo de simplificar o aprendizado e a evolução tática de jogadores iniciantes e intermediários do jogo **Valorant**.
+Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em um guia tático de Valorant, sendo o diferencial a criação de um painel de estudo personalizado, focando nos mapas e situações de maior dificuldade registradas pelo próprio jogador.
 
-A aplicação permite que o usuário pesquise agentes, armas e mapas do jogo, consulte suas informações oficiais e monte um painel de estudo personalizado focando nos seus mapas de maior dificuldade.
-
-O frontend da aplicação será desenvolvido utilizando **HTML, CSS e JavaScript**, com suporte de um **Framework CSS** (Bootstrap ou Tailwind CSS) para a construção da interface e layout responsivo.
-
-Os dados são consumidos em tempo real da **Valorant-API** pública, e a persistência de preferências do jogador é realizada via **LocalStorage**.
-
----
+O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript. Os dados do jogo são consumidos de forma dinâmica através da integração com uma API pública (Valorant-API), e o backend/banco de dados foi simulado utilizando o Web Storage (localStorage) para a persistência de preferências do usuário no navegador.
 
 ## 📚 Documentação do Projeto
 
-Para entender o propósito, escopo e estrutura técnica da aplicação, consulte os documentos abaixo:
+Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
-* [📄 Product Requirements Document (PRD)](./docs/prd.md) — Descrição do sistema, objetivo, atores e histórias de usuário.
-* [🛠️ Especificação Técnica](./docs/architecture.md) — Modelo de dados e relacionamentos das entidades da aplicação.
-* [🎨 Design System](#) — Identidade visual, cores, tipografia e padrões de componentes. *(em breve)*
-* [🖼️ Protótipo no Figma](#) — Protótipo das principais telas da aplicação.
-
----
+- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores e histórias de usuário.
+- [🛠️ Especificação Técnica (Tech Spec)](./docs/architecture.md) - Diagrama de banco de dados (DER) e entidades.
 
 ## 🎨 Design
 
-O projeto contará com uma interface visual inspirada no universo do Valorant, priorizando clareza, acessibilidade e responsividade entre dispositivos.
+- [🎨 Design System](#) - Identidade visual *(em breve)*
+- [🖼️ Protótipo no Figma](#) - Telas interativas da aplicação *(em breve)*
 
-O protótipo das interfaces será desenvolvido no **Figma**, contemplando as versões:
+## 🌐 Site em Produção - GitHub Pages
 
-* 📱 Mobile
-* 💻 Desktop
-
-### Protótipo no Figma
-
-*(link será adicionado posteriormente)*
-
----
-
-## 🌐 Site em Produção
-
-**Ainda em desenvolvimento.**
-
-O projeto será disponibilizado posteriormente por meio do GitHub Pages.
-
----
+*(Link será disponibilizado posteriormente após o deploy)*
 
 ## 💻 Tecnologias e Dependências
 
-### Frontend
+- **Framework CSS:** Bootstrap (ou Tailwind CSS)
+- **JavaScript:**
+  - **Fetch API** - Para realizar requisições assíncronas à Valorant-API.
+  - **Web Storage** - Para persistir dados do usuário localmente.
 
-* **HTML5** — Estrutura semântica das páginas.
-* **CSS3** — Estilização complementar, Flexbox, Grid e variáveis CSS.
-* **JavaScript (ES6+)** — Lógica de aplicação, manipulação do DOM e requisições assíncronas.
-* **Framework CSS** — Framework utilizado para componentes e layout responsivo.
+## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
-### Consumo de Dados & Persistência
+#### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 
-* **Valorant-API** — API REST pública oficial para consulta de dados de agentes, mapas e armas.
-* **LocalStorage** — Persistência de dados cadastrais e preferências de estudo no navegador.
-* **Mock JSON** — Dados estáticos para curadoria de VODs e dicas táticas.
+- [ ] ID 01 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
+- [ ] ID 02 - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do próprio framework.
+- [ ] ID 03 - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
+- [ ] ID 04 - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).
+- [ ] ID 05 - Cria layout fluido usando unidades relativas (vw, vh, %, em, rem) no lugar de unidades fixas (px).
+- [ ] ID 06 - Aplica um Design System consistente (cores, tipografia, padrões de componentes) em toda a aplicação.
+- [ ] ID 07 - Utiliza Sass (SCSS) com ou sem framework, aplicando variáveis, mixins e funções para modularizar o código.
+- [ ] ID 08 - Aplica tipografia responsiva (media queries mobile first) ou tipografia fluida (função clamp() + unidades relativas).
+- [ ] ID 09 - Aplica técnicas de responsividade de imagens usando CSS (object-fit, containers com unidades relativas).
+- [ ] ID 10 - Otimiza imagens usando formatos modernos (WebP) e carregamento adaptativo (srcset, picture, ou parâmetros do Cloudinary).
 
-### Ferramentas de desenvolvimento
+#### RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente.
 
-* **Git**
-* **GitHub**
-* **VS Code**
+- [ ] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
+- [ ] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, telefone, datas, etc.)
+- [ ] ID 13 - Utiliza elementos de seleção em formulários (checkbox, radio, select) para coleta de dados.
+- [ ] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
 
----
+#### RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web.
 
-## 🗂️ Estrutura do Projeto
+- [ ] ID 15 - Configura ambiente com Node.js e NPM para gerenciamento de pacotes e dependências.
+- [ ] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
+- [ ] ID 17 - Mantém um README.md padronizado, conforme template da disciplina, com checklist preenchido.
+- [ ] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrão de exemplo fornecido.
+- [ ] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronização do código.
 
-```text
-valo-playbook/
-│
-├── docs/
-│   ├── prd.md
-│   └── architecture.md
-│
-├── assets/
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── pages/
-├── index.html
-└── README.md
-```
+#### RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimorar a interatividade de páginas web.
 
-A organização poderá ser ajustada durante o desenvolvimento, mantendo o princípio de modularização e separação de responsabilidades.
+- [ ] ID 20 - Utiliza jQuery para manipulação do DOM e interatividade (eventos, animações, manipulação de elementos)
+- [ ] ID 21 - Integra e configura um plugin jQuery relevante (ex.: jQuery Mask Plugin).
 
----
+#### RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
 
-## 🚀 Manual de Execução
+- [ ] ID 22 - Realiza requisições assíncronas para uma API fake (ex.: JSON Server) para persistir dados de um formulário.
+- [ ] ID 23 - Realiza requisições assíncronas para uma API fake para exibir dados na página.
+- [ ] ID 24 - Realiza requisições assíncronas para APIs públicas reais (OpenWeather, ViaCEP etc.), exibindo os dados e tratando erros.
 
-### 1. Clonar o repositório
+## 🚀 Manual de execução
 
-```bash
-git clone [https://github.com/seu-usuario/valo-playbook.git](https://github.com/seu-usuario/valo-playbook.git)
-```
+- Clonar o repositório com `git clone https://github.com/seu-usuario/valo-playbook.git`
+- Abrir o projeto no editor Visual Studio Code (VS Code)
+- Executar o projeto frontend utilizando a extensão **Live Server** do VS Code ou abrindo diretamente o arquivo `index.html` no seu navegador web.
 
-### 2. Acessar o diretório do projeto
+## 📱 Telas da aplicação
 
-```bash
-cd valo-playbook
-```
-
-### 3. Executar o frontend
-
-O frontend poderá ser executado utilizando a extensão **Live Server** do Visual Studio Code ou abrindo diretamente o arquivo `index.html` em seu navegador.
-
----
-
-## 📱 Funcionalidades
-
-As principais funcionalidades previstas para o ValoPlaybook são:
-
-* 🔎 Pesquisa e consulta completa de agentes, armas e mapas via Valorant-API.
-* 🎯 Filtragem de armas por categoria e mapas por perfil de jogo.
-* 📝 Formulário de cadastro de usuário com validação de dados.
-* 🔐 Autenticação e login de usuários na plataforma.
-* 📌 Mapeamento e seleção dos mapas em que o jogador possui maior dificuldade.
-* 🎥 Central de estudos com dicas táticas e VODs recomendados.
-* 💾 Persistência de dados do usuário e preferências via LocalStorage.
-* 📱 Interface responsiva para mobile e desktop.
-
----
-
-## 📝 Checklist | Indicadores de Desempenho
-
-### RA1 — Documentação, Versionamento e Estrutura
-
-* [x] ID 01 — Criar repositório público no GitHub seguindo o padrão *dashed-case*.
-* [x] ID 02 — Documentar a ideia do projeto, atores e Histórias de Usuário no arquivo `docs/prd.md`.
-* [x] ID 03 — Documentar o Modelo de Dados e Diagrama ER Mermaid no arquivo `docs/architecture.md`.
-* [ ] ID 04 — Manter o arquivo `README.md` atualizado com a apresentação e o checklist dos 24 IDs.
-* [ ] ID 05 — Manter o histórico de commits frequente, claro e organizado.
-
-### RA2 — HTML5 Semântico e Organização do Projeto
-
-* [ ] ID 06 — Utilizar tags semânticas do HTML5 (`header`, `nav`, `main`, `section`, `article`, `footer`).
-* [ ] ID 07 — Estruturar a aplicação em pelo menos 3 páginas HTML interligadas e funcionais.
-* [ ] ID 08 — Configurar adequadamente as *meta tags* essenciais (`charset`, `viewport`, `title`, `description`).
-* [ ] ID 09 — Organizar a estrutura de pastas do projeto de forma limpa (`css/`, `js/`, `assets/`, `docs/`).
-
-### RA3 — CSS3, Responsividade e Framework Visual
-
-* [ ] ID 10 — Definir uma identidade visual coesa com paleta de cores, tipografia e espaçamentos padronizados.
-* [ ] ID 11 — Utilizar recursos de layout moderno com CSS Grid e/ou Flexbox.
-* [ ] ID 12 — Aplicar responsividade para navegação em dispositivos móveis (*Mobile First* / *Media Queries*).
-* [ ] ID 13 — Utilizar variáveis CSS (*CSS Custom Properties*) ou reutilização de classes utilitárias.
-* [ ] ID 14 — Integrar e utilizar um Framework CSS ou metodologia de estilização no projeto.
-
-### RA4 — Formulários e Validações
-
-* [ ] ID 15 — Implementar formulário de cadastro de usuário com diferentes tipos de `input` e validação visual.
-* [ ] ID 16 — Implementar formulário de login/autenticação funcional.
-* [ ] ID 17 — Implementar formulário ou controle interativo para seleção de mapas de maior dificuldade pelo usuário.
-
-### RA5 — Consumo de APIs e Manipulação do DOM
-
-* [ ] ID 18 — Consumir dados assíncronos da **Valorant-API** utilizando Fetch API ou biblioteca equivalente.
-* [ ] ID 19 — Renderizar elementos dinamicamente na tela com base na resposta da API externa.
-* [ ] ID 20 — Tratar estados de carregamento (*loading*) e cenários de erro nas requisições da API.
-* [ ] ID 21 — Utilizar dados estáticos/simulados (Mock JSON) para exibir dicas táticas e VODs recomendados.
-* [ ] ID 22 — Simular a persistência de preferências do usuário logado através do `LocalStorage`.
-
-### RA6 — Acessibilidade e Publicação
-
-* [ ] ID 23 — Aplicar boas práticas de acessibilidade (atributos `alt`, contraste adequado de cores e navegação acessível).
-* [ ] ID 24 — Realizar o *deploy* e disponibilizar a aplicação em ambiente de hospedagem web (GitHub Pages/Vercel).
-
----
-
-## 📌 Status
-
-**Em desenvolvimento.**
-
-O escopo e as funcionalidades poderão ser refinados conforme o desenvolvimento do projeto e os requisitos da disciplina.
+*(Imagens do projeto serão adicionadas aqui conforme o desenvolvimento das telas)*

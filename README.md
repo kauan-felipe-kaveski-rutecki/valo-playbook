@@ -11,7 +11,8 @@ O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript. Os dados 
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
 - [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores e histórias de usuário.
-- [🛠️ Especificação Técnica (Tech Spec)](./docs/architecture.md) - Diagrama de banco de dados (DER) e entidades.
+- [🛠️ Especificação Técnica (Tech Spec)](./docs/spec.md) - Requisitos técnicos, dependências, rotas de API e Design System.
+- [📐 Arquitetura de Dados e DER](./docs/architecture.md) - Diagrama de banco de dados (DER) e entidades.
 
 ## 🎨 Design
 
@@ -24,16 +25,25 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** Bootstrap (ou Tailwind CSS)
+- **Framework CSS:** Bootstrap (v5.3.3)
+- **API Pública Externa:** Valorant-API (v1)
 - **JavaScript:**
   - **Fetch API** - Para realizar requisições assíncronas à Valorant-API.
   - **Web Storage** - Para persistir dados do usuário localmente.
+
+### 💡 Justificativa das Escolhas
+
+- **Framework CSS — Bootstrap 5.3.3**:
+  A escolha do Bootstrap 5 se deve à sua maturidade, excelente suporte à abordagem *mobile-first* e biblioteca robusta de componentes prontos (cards, navbars, offcanvas, modais e formulários). A versão 5 não depende de jQuery, utiliza CSS moderno, possui licença MIT amigável e é mantida ativamente no GitHub, garantindo estabilidade e facilidade de manutenção.
+
+- **API Pública — Valorant-API (`valorant-api.com`)**:
+  Para alimentar o *ValoPlaybook* com dados reais do jogo, foi selecionada a **Valorant-API**. Ela é uma API pública e gratuita que não exige chave de autenticação (API Key) para consumo básico. Fornece endpoints completos com dados atualizados a cada patch do jogo (agentes, funções, habilidades, armas e mapas) acompanhados de imagens de alta qualidade em formato JSON.
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
 #### RA1 - Utilizar Frameworks CSS para estilização de elementos HTML e criação de layouts responsivos.
 
-- [ ] ID 01 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
+- [x] ID 01 - Prototipa interfaces adaptáveis para no mínimo os tamanhos de tela mobile e desktop, usando ferramentas de design tradicionais (Figma, Quant UX ou Sketch) ou IA (Stitch).
 - [ ] ID 02 - Implementa layout responsivo com Framework CSS (Bootstrap, Materialize, Tailwind + DaisyUI) usando Flexbox ou Grid do próprio framework.
 - [ ] ID 03 - Implementa layout responsivo com CSS puro, usando Flexbox ou Grid Layout.
 - [ ] ID 04 - Utiliza componentes prontos de um Framework CSS (ex.: card, button) e componentes JavaScript do framework (ex.: modal, carousel).

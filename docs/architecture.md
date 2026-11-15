@@ -1,10 +1,25 @@
-# ValoPlaybook — Modelo de Dados
+# 📐 Arquitetura e Especificação Técnica — ValoPlaybook
 
-## Diagrama Entidade-Relacionamento
+## 1. Visão Geral e Stack Tecnológica
 
-O ValoPlaybook precisa armazenar os dados cadastrais dos jogadores e o registro personalizado de quais mapas eles possuem maior dificuldade, para fins de estudo.
+O **ValoPlaybook** é uma aplicação web responsiva de guia tático e central de estudos para jogadores de *Valorant*. A arquitetura combina o consumo de dados estáticos/oficiais de uma API pública externa com uma API REST simulada (`json-server`) para persistência dos dados personalizados de cada jogador.
 
-Um usuário pode registrar diversos mapas em sua lista de dificuldades. Por isso, a relação entre `USUARIO` e `MAPA_DIFICULDADE` é direta, onde um usuário possui vários registros de mapas vinculados à sua conta. Os dados ricos dos mapas não ficam salvos no banco, sendo consumidos dinamicamente da API oficial.
+### 1.1 Dependências e Regras de Front-end
+- **Framework CSS:** Bootstrap `v5.3.3` (Licença MIT), integrado via CDN oficial:
+  - CSS: `https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css`
+  - JS Bundle: `https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js`
+- **Componentes Bootstrap:** Grid System, Navbar, Cards, Nav-pills, Nav-tabs, Form Controls, Badges e Modais.
+- **Restrição Técnica:** Uso exclusivo de Bootstrap 5 e CSS customizado (`design-system.md`). É estritamente proibido o uso de Tailwind CSS.
+- **Persistência de Dados e Sessão:** `json-server` (`db.json`) para armazenamento das entidades do sistema e `localStorage` para controle de sessão do usuário autenticado.
+- **Identidade Visual:** Documentada em [`docs/design-system.md`](./design-system.md).
+
+---
+
+## 2. Diagrama Entidade-Relacionamento (DER)
+
+O sistema armazena os dados cadastrais dos jogadores e o registro personalizado de quais mapas eles possuem maior dificuldade para fins de estudo.
+
+Um usuário pode registrar diversos mapas em sua lista de dificuldades (relação `1:N` entre `USUARIO` e `MAPA_DIFICULDADE`). Os dados ricos dos mapas (nome, splash art, minimapa) não são duplicados no banco local, sendo obtidos dinamicamente da **Valorant-API** através do identificador `mapa_api_id`.
 
 ```mermaid
 erDiagram
@@ -25,27 +40,3 @@ erDiagram
         string nivel_dificuldade
         string observacao
     }
-```
-
-## Entidades
-
-### `USUARIO`
-
-Representa a conta do jogador cadastrada no sistema.
-
-* `id`: identificador único do usuário.
-* `nickname`: nome de usuário ou Riot ID do jogador.
-* `email`: endereço de e-mail para login.
-* `senha`: senha de acesso à plataforma.
-
-### `MAPA_DIFICULDADE`
-
-Representa o mapeamento de um ponto fraco do jogador, relacionando a conta dele a um mapa específico do jogo.
-
-* `id`: identificador único do registro.
-* `usuario_id`: identifica o usuário dono do registro (Chave Estrangeira).
-* `mapa_api_id`: identificador (UUID) do mapa correspondente na Valorant-API.
-* `nivel_dificuldade`: o quão difícil o jogador considera o mapa (ex: Alta, Média, Baixa).
-* `observacao`: anotações pessoais do jogador sobre o mapa (ex: "Tenho dificuldade em defender o bomb B").
-
-*Nota: As informações ricas dos mapas (nome oficial, layout, imagens e radares) não são duplicadas nesta tabela, pois serão obtidas em tempo real utilizando o `mapa_api_id` por meio da consulta à Valorant-API pública.*

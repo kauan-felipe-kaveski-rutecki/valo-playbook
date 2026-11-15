@@ -4,19 +4,18 @@
 
 Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em um guia tático de Valorant, sendo o diferencial a criação de um painel de estudo personalizado, focando nos mapas e situações de maior dificuldade registradas pelo próprio jogador.
 
-O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript. Os dados do jogo são consumidos de forma dinâmica através da integração com uma API pública (Valorant-API), e o backend/banco de dados foi simulado utilizando o Web Storage (localStorage) para a persistência de preferências do usuário no navegador.
+O frontend da aplicação foi desenvolvido com HTML, CSS e JavaScript. Os dados oficiais do jogo são consumidos de forma dinâmica através da integração com uma API pública (Valorant-API), enquanto o backend/banco de dados é simulado utilizando **JSON Server (`db.json`)** para persistência dos registros e **Web Storage (`localStorage`)** para controle de sessão do usuário no navegador.
 
 ## 📚 Documentação do Projeto
 
 Para entender as regras de negócio, o escopo e a arquitetura técnica da aplicação, consulte os documentos abaixo:
 
-- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores e histórias de usuário.
-- [🛠️ Especificação Técnica (Tech Spec)](./docs/spec.md) - Requisitos técnicos, dependências, rotas de API e Design System.
-- [📐 Arquitetura de Dados e DER](./docs/architecture.md) - Diagrama de banco de dados (DER) e entidades.
+- [📄 Product Requirements Document (PRD)](./docs/prd.md) - Visão geral, atores, histórias de usuário e critérios de aceitação.
+- [📐 Arquitetura e Especificação Técnica](./docs/architecture.md) - Stack tecnológica, DER, dicionário de dados, rotas de API e estrutura inicial do `db.json`.
 
 ## 🎨 Design
 
-- [🎨 Design System](./docs/design-system.md) - Identidade visual e tokens de design.
+- [🎨 Design System](./docs/design-system.md) - Identidade visual (*Tactical Dark Ops*), paleta de cores, tipografia (`Inter` e `JetBrains Mono`) e mapeamento de componentes Bootstrap.
 - [🖼️ Protótipo Interativo no Stitch](https://stitch.withgoogle.com/projects/6512120559904811507) - Telas responsivas e navegação da aplicação.
 
 ## 🌐 Site em Produção - GitHub Pages
@@ -25,11 +24,12 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 💻 Tecnologias e Dependências
 
-- **Framework CSS:** Bootstrap (v5.3.3)
-- **API Pública Externa:** Valorant-API (v1)
-- **JavaScript:**
-  - **Fetch API** - Para realizar requisições assíncronas à Valorant-API.
-  - **Web Storage** - Para persistir dados do usuário localmente.
+- **Framework CSS:** Bootstrap (`v5.3.3`)
+- **API Pública Externa:** Valorant-API (`v1`)
+- **JavaScript & Persistência:**
+  - **Fetch API** - Para realizar requisições assíncronas à Valorant-API e à API local.
+  - **JSON Server** - Para simular a API REST e persistir os dados no arquivo `db.json`.
+  - **Web Storage (`localStorage`)** - Para manter a sessão do usuário autenticado localmente.
 
 ### 💡 Justificativa das Escolhas
 

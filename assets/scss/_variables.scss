@@ -1,0 +1,33 @@
+// Paleta Tactical Dark Ops (Stitch)
+$primary:       #FF4655; // Primary (Valorant Red)
+$secondary:     #8F9CAE; // Texto auxiliar e bordas sutis
+$success:       #00F5A0; // Secondary do Stitch (Neon Win Rate / Destaques)
+$info:          #009F78; // Tertiary do Stitch
+$warning:       #FFB800;
+$danger:        #FF4655;
+$dark:          #0B0E14; // Neutral (Fundo base)
+$light:         #FFFFFF;
+
+// Superfícies e Bordas (Padrão + Dark Mode Bootstrap 5.3)
+$body-bg:                     #0B0E14;
+$body-color:                  #FFFFFF;
+$border-color:                #24303f;
+$card-bg:                     #18222d;
+$card-border-color:           #24303f;
+
+$body-bg-dark:                #0B0E14;
+$body-color-dark:             #FFFFFF;
+$border-color-dark:           #24303f;
+$secondary-bg-subtle-dark:    #121a23;
+$secondary-border-subtle-dark:#24303f;
+
+// Inputs
+$input-bg:                    #121a23;
+$input-border-color:          #24303f;
+$input-color:                 #FFFFFF;
+$input-placeholder-color:     #6c7a8d;
+$input-focus-border-color:    #FF4655;
+
+// Tipografia
+$font-family-sans-serif: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-family-monospace:  'JetBrains Mono', monospace;

@@ -1,0 +1,30 @@
+{
+  "name": "valo-playbook",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em um guia tático de Valorant, sendo o diferencial a criação de um painel de estudo personalizado, focando nos mapas e situações de maior dificuldade registradas pelo próprio jogador.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch assets/scss/main.scss:assets/css/main.css",
+    "build": "sass assets/scss/main.scss:assets/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook/issues"
+  },
+  "homepage": "https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.108.2"
+  }
+}

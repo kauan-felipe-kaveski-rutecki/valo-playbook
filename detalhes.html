@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValoPlaybook — Detalhes do Agente (Jett)</title>
+
+  <!-- Fontes Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap Icons 1.13.1 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" integrity="sha384-Bk5cbLkZQ5raZ0+H2/+VbfYx3WpvxvQK4zqXZr7sYODuaX7bKXoSOnipQxkaS8sv" crossorigin="anonymous" />
+
+  <!-- CSS compilado do Sass + Bootstrap 5.3.3 -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- NAVBAR DESKTOP (>= 992px) -->
+  <!-- NAVBAR DESKTOP (>= 992px) -->
+  <header class="trk-navbar sticky-top d-flex align-items-center">
+    <div class="container-xl px-3 px-md-4 d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-4">
+        <a class="d-flex align-items-center gap-2 text-decoration-none fw-bold text-white text-uppercase font-monospace text-nowrap" href="index.html">
+          <span class="badge bg-primary">VP</span>
+          <span>VALO<span class="text-primary">PLAYBOOK</span></span>
+        </a>
+
+        <nav class="d-none d-lg-flex align-items-center gap-1">
+          <a class="trk-nav-link" href="index.html">Home</a>
+          <a class="trk-nav-link" href="index.html">Catálogo</a>
+          <a class="trk-nav-link active" href="detalhes.html">Táticas</a>
+          <a class="trk-nav-link" href="dashboard.html">Painel</a>
+        </nav>
+      </div>
+
+      <div class="d-flex align-items-center gap-2 gap-sm-3">
+        <div class="d-none d-md-flex input-group input-group-sm">
+          <span class="input-group-text bg-dark border-secondary-subtle text-secondary">
+            <i class="bi bi-search"></i>
+          </span>
+          <input type="search" class="form-control" placeholder="Buscar agentes, armas..." aria-label="Buscar" />
+        </div>
+
+        <!-- AQUI: adicione text-nowrap no class -->
+        <a href="login.html" class="btn btn-sm btn-outline-secondary text-white d-inline-flex align-items-center gap-2 font-monospace text-nowrap">
+          <i class="bi bi-box-arrow-in-right"></i>
+          <span>Sign In</span>
+        </a>
+
+        <!-- ID 04: Gatilho Offcanvas Mobile -->
+        <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir Menu">
+          <i class="bi bi-list fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OFFCANVAS MOBILE (ID 04: Componente JS) -->
+  <div class="offcanvas offcanvas-end bg-dark text-light" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    <div class="offcanvas-header border-bottom border-secondary-subtle">
+      <h5 class="offcanvas-title font-monospace fw-bold" id="menuLateralLabel">
+        <span class="badge bg-primary me-2">VP</span>VALOPLAYBOOK
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item"><a class="nav-link" href="index.html">Catálogo Oficial</a></li>
+        <li class="nav-item"><a class="nav-link active text-primary fw-bold" href="detalhes.html">Táticas (Jett)</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Painel de Estudos</a></li>
+      </ul>
+      <a href="login.html" class="btn btn-trk-red w-100 py-2">Sign In</a>
+    </div>
+  </div>
+
+  <!-- HERO BANNER DO AGENTE -->
+  <section class="hero-tatico pb-0">
+    <div class="container-xl px-3 px-md-4">
+      <div class="mb-3">
+        <a href="index.html" class="btn btn-sm badge-trk-dark text-white d-inline-flex align-items-center gap-2 font-monospace px-3 py-1">
+          <i class="bi bi-arrow-left"></i>
+          <span>Voltar ao Catálogo</span>
+        </a>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0 font-monospace small">
+            <li class="breadcrumb-item"><a class="text-secondary text-decoration-none" href="index.html">Valorant</a></li>
+            <li class="breadcrumb-item"><a class="text-secondary text-decoration-none" href="index.html">Agentes</a></li>
+            <li class="breadcrumb-item active text-white fw-semibold" aria-current="page">Jett</li>
+          </ol>
+        </nav>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="btn-trk-icon" aria-label="Favoritar">
+            <i class="bi bi-heart"></i>
+          </button>
+          <button type="button" class="btn-trk-icon" aria-label="Compartilhar">
+            <i class="bi bi-share"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Perfil da Agente (ID 09 + ID 10: <picture> WebP) -->
+      <div class="d-flex flex-column flex-sm-row align-items-sm-center gap-3 gap-md-4 pb-2">
+        <div class="avatar-agente position-relative">
+          <picture>
+            <source media="(max-width: 767px)" srcset="assets/img/jett-sm.webp" type="image/webp" />
+            <img src="assets/img/jett-lg.webp" alt="Retrato da agente Jett" />
+          </picture>
+          <span class="position-absolute bottom-0 end-0 badge bg-primary font-monospace m-1">S+</span>
+        </div>
+
+        <div class="flex-grow-1">
+          <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
+            <h1 class="titulo-fluido text-white text-uppercase mb-0">JETT</h1>
+            <span class="badge badge-trk-red font-monospace px-2 py-1">TIER S+ • META ATUAL</span>
+            <span class="badge badge-trk-dark font-monospace px-2 py-1">DUELISTA / CORE ENTRY</span>
+          </div>
+          <p class="subtitulo-fluido mb-0 col-lg-8">
+            Representando a Coreia do Sul, o estilo ágil e evasivo de Jett permite que ela assuma riscos que ninguém mais consegue. Especialista em criação de espaço, rotações verticais e abates fulminantes.
+          </p>
+        </div>
+      </div>
+
+      <!-- Sub-navegação horizontal -->
+      <ul class="nav trk-subnav overflow-x-auto flex-nowrap">
+        <li class="nav-item"><a class="nav-link active" href="#overview">OVERVIEW</a></li>
+        <li class="nav-item"><a class="nav-link" href="#abilities">ABILITIES</a></li>
+        <li class="nav-item"><a class="nav-link" href="#setups">SETUPS &amp; LINEUPS</a></li>
+        <li class="nav-item"><a class="nav-link" href="#performance">PERFORMANCE</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container-xl px-3 px-md-4 py-4">
+    <!-- MATRIZ DE 4 ESTATÍSTICAS -->
+    <section class="mb-4" id="overview">
+      <div class="trk-stat-grid row g-0">
+        <div class="col-6 col-md-3 trk-stat-box">
+          <span class="d-block font-monospace text-secondary small mb-1">DAMAGE / ROUND</span>
+          <div class="d-flex align-items-baseline gap-2">
+            <span class="h3 fw-bold text-white mb-0 font-monospace">154.2</span>
+            <span class="font-monospace small text-neon fw-bold">Top 6%</span>
+          </div>
+          <small class="text-secondary">Média global em Competitivo</small>
+        </div>
+
+        <div class="col-6 col-md-3 trk-stat-box">
+          <span class="d-block font-monospace text-secondary small mb-1">K/D RATIO</span>
+          <div class="d-flex align-items-baseline gap-2">
+            <span class="h3 fw-bold text-white mb-0 font-monospace">1.28</span>
+            <span class="font-monospace small text-neon fw-bold">Top 10%</span>
+          </div>
+          <small class="text-secondary">Taxa de eliminações/mortes</small>
+        </div>
+
+        <div class="col-6 col-md-3 trk-stat-box border-top border-md-top-0 border-secondary-subtle">
+          <span class="d-block font-monospace text-secondary small mb-1">HEADSHOT %</span>
+          <div class="d-flex align-items-baseline gap-2">
+            <span class="h3 fw-bold text-white mb-0 font-monospace">28.4%</span>
+            <span class="font-monospace small text-secondary">Top 22%</span>
+          </div>
+          <small class="text-secondary">Precisão no primeiro tiro</small>
+        </div>
+
+        <div class="col-6 col-md-3 trk-stat-box border-top border-md-top-0 border-secondary-subtle">
+          <span class="d-block font-monospace text-secondary small mb-1">WIN %</span>
+          <div class="d-flex align-items-baseline gap-2">
+            <span class="h3 fw-bold mb-0 font-monospace text-neon">53.8%</span>
+            <span class="font-monospace small text-neon">15.2% Pick</span>
+          </div>
+          <small class="text-secondary">Vitórias em partidas rankeadas</small>
+        </div>
+      </div>
+    </section>
+
+    <div class="row g-4">
+      <!-- COLUNA ESQUERDA (8 cols) -->
+      <div class="col-12 col-lg-8">
+        <!-- ID 03: CSS Grid Puro (.grade-habilidades em 2x2) -->
+        <section class="mb-4" id="abilities">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-controller text-primary fs-5"></i>
+              <h2 class="h6 fw-bold text-uppercase text-white mb-0">Habilidades do Agente</h2>
+            </div>
+            <span class="badge badge-trk-neon font-monospace px-2 py-1">PATCH V8.11</span>
+          </div>
+
+          <div class="grade-habilidades">
+            <!-- Q: Updraft -->
+            <article class="card-valo d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge badge-trk-dark text-primary font-monospace fw-bold">[Q]</span>
+                  <i class="bi bi-arrow-up text-secondary"></i>
+                </div>
+                <h3 class="h6 fw-bold text-white mb-1">Updraft</h3>
+                <p class="text-secondary small mb-3">
+                  Impulso vertical instantâneo para posições elevadas e ângulos fora do campo de mira padrão.
+                </p>
+              </div>
+              <div class="pt-2 border-top border-secondary-subtle font-monospace small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-secondary">Custo</span>
+                  <span class="text-white fw-bold">150 Creds</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-secondary">Cargas</span>
+                  <span class="text-white fw-bold">2x</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- E: Tailwind -->
+            <article class="card-valo d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge badge-trk-neon font-monospace fw-bold">[E]</span>
+                  <i class="bi bi-fast-forward text-secondary"></i>
+                </div>
+                <h3 class="h6 fw-bold text-white mb-1">Tailwind</h3>
+                <p class="text-secondary small mb-3">
+                  Dash horizontal instantâneo com janela tática de ativação prévia de 12 segundos.
+                </p>
+              </div>
+              <div class="pt-2 border-top border-secondary-subtle font-monospace small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-secondary">Tipo</span>
+                  <span class="text-white fw-bold">Assinatura Grátis</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-secondary">Recarga</span>
+                  <span class="text-neon fw-bold">2 Abates</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- C: Cloudburst -->
+            <article class="card-valo d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge badge-trk-cyan font-monospace fw-bold">[C]</span>
+                  <i class="bi bi-cloud-fill text-secondary"></i>
+                </div>
+                <h3 class="h6 fw-bold text-white mb-1">Cloudburst</h3>
+                <p class="text-secondary small mb-3">
+                  Projétil aerodinâmico que se expande em uma nuvem de fumaça rápida e manobrável.
+                </p>
+              </div>
+              <div class="pt-2 border-top border-secondary-subtle font-monospace small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-secondary">Custo</span>
+                  <span class="text-white fw-bold">200 Creds</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-secondary">Duração</span>
+                  <span class="text-white fw-bold">4.5s</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- X: Blade Storm -->
+            <article class="card-valo d-flex flex-column justify-content-between">
+              <div>
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="badge badge-trk-red font-monospace fw-bold">[X]</span>
+                  <i class="bi bi-crosshair text-secondary"></i>
+                </div>
+                <h3 class="h6 fw-bold text-white mb-1">Blade Storm</h3>
+                <p class="text-secondary small mb-3">
+                  Equipa adagas de precisão fatal em movimento; abates reiniciam todas as lâminas.
+                </p>
+              </div>
+              <div class="pt-2 border-top border-secondary-subtle font-monospace small">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-secondary">Carga Ult</span>
+                  <span class="text-white fw-bold">8 Pontos</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-secondary">Dano</span>
+                  <span class="text-white fw-bold">50 Corpo / 150 HS</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- DESEMPENHO POR MAPA -->
+        <section id="performance">
+          <div class="card-valo">
+            <div class="d-flex align-items-center justify-content-between mb-3 border-bottom border-secondary-subtle pb-2">
+              <h2 class="h6 fw-bold text-uppercase text-white mb-0">Desempenho por Mapa</h2>
+              <span class="font-monospace text-secondary small">Top Picks Competitivos</span>
+            </div>
+
+            <div class="d-flex flex-column gap-2">
+              <div class="bloco-interno d-flex align-items-center justify-content-between p-2 px-3">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-secondary bg-opacity-25 text-white font-monospace">ASCENT</span>
+                  <span class="text-white fw-semibold small">Ascent (Duelista Pick Rate 82%)</span>
+                </div>
+                <span class="font-monospace fw-bold text-neon small">54.2% WR</span>
+              </div>
+
+              <div class="bloco-interno d-flex align-items-center justify-content-between p-2 px-3">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-secondary bg-opacity-25 text-white font-monospace">HAVEN</span>
+                  <span class="text-white fw-semibold small">Haven (Duelista Pick Rate 71%)</span>
+                </div>
+                <span class="font-monospace fw-bold text-neon small">53.5% WR</span>
+              </div>
+
+              <div class="bloco-interno d-flex align-items-center justify-content-between p-2 px-3">
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-secondary bg-opacity-25 text-white font-monospace">BREEZE</span>
+                  <span class="text-white fw-semibold small">Breeze (Duelista Pick Rate 88%)</span>
+                </div>
+                <span class="font-monospace fw-bold text-neon small">55.1% WR</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- COLUNA DIREITA (4 cols) -->
+      <div class="col-12 col-lg-4">
+        <div class="d-flex flex-column gap-3">
+          <div class="card-valo" id="setups">
+            <div class="pb-2 mb-3 border-bottom border-secondary-subtle d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center gap-2">
+                <i class="bi bi-signpost-split text-primary"></i>
+                <h2 class="h6 fw-bold text-uppercase text-white mb-0">Setups &amp; Execuções</h2>
+              </div>
+              <span class="badge badge-trk-dark font-monospace">ASCENT &amp; HAVEN</span>
+            </div>
+
+            <div class="d-flex flex-column gap-3">
+              <div class="bloco-interno p-3">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="fw-semibold text-white small">Ascent • Entrada Bomb A</span>
+                  <span class="badge badge-trk-red font-monospace">ATAQUE</span>
+                </div>
+                <p class="text-secondary small mb-0">
+                  Ative o <strong class="text-white">Tailwind [E]</strong>, lance a smoke curta sobre o gerador e use o dash no topo das caixas pretas para anular a mira do Operador de A Long.
+                </p>
+              </div>
+
+              <div class="bloco-interno p-3">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="fw-semibold text-white small">Haven • Retake Garagem</span>
+                  <span class="badge badge-trk-neon font-monospace">DEFESA</span>
+                </div>
+                <p class="text-secondary small mb-0">
+                  Combine <strong class="text-white">Updraft [Q]</strong> na janela dupla para obter visão prévia do avanço atacante e recuar sem sofrer dano pela ligação do Bomb C.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOTÃO CTA VERMELHO -->
+          <div class="painel-metrica">
+            <a href="dashboard.html" class="btn btn-trk-red w-100 py-3 d-flex align-items-center justify-content-center gap-2">
+              <i class="bi bi-bookmark-plus fs-5"></i>
+              <span>ADICIONAR AOS MEUS ESTUDOS</span>
+            </a>
+          </div>
+
+          <!-- DICA PRO TRACKER -->
+          <div class="bloco-interno p-3 d-flex align-items-start gap-2">
+            <i class="bi bi-lightbulb text-warning fs-5"></i>
+            <p class="text-secondary small mb-0">
+              <strong class="text-white">Dica Pro Tracker:</strong> Economize o Updraft em rounds econômicos para manter posicionamento imprevisível com a Sheriff no bombsite.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- NAVEGAÇÃO INFERIOR MOBILE -->
+  <nav class="navbar fixed-bottom trk-navbar border-top border-secondary-subtle d-lg-none py-1">
+    <div class="container justify-content-around text-center small">
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="index.html">
+        <i class="bi bi-grid fs-5"></i>
+        <span>Catálogo</span>
+      </a>
+      <a class="text-primary fw-bold text-decoration-none d-flex flex-column align-items-center" href="detalhes.html">
+        <i class="bi bi-radar fs-5"></i>
+        <span>Táticas</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="dashboard.html">
+        <i class="bi bi-bar-chart-line fs-5"></i>
+        <span>Painel</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="login.html">
+        <i class="bi bi-person fs-5"></i>
+        <span>Perfil</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

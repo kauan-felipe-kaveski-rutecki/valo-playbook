@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValoPlaybook — Painel de Estudos</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" integrity="sha384-Bk5cbLkZQ5raZ0+H2/+VbfYx3WpvxvQK4zqXZr7sYODuaX7bKXoSOnipQxkaS8sv" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- NAVBAR UNIFICADA (IDÊNTICA AO INDEX.HTML) -->
+  <header class="trk-navbar sticky-top d-flex align-items-center">
+    <div class="container-xl px-3 px-md-4 d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-4">
+        <a class="d-flex align-items-center gap-2 text-decoration-none fw-bold text-white text-uppercase font-monospace text-nowrap" href="index.html">
+          <span class="badge bg-primary">VP</span>
+          <span>VALO<span class="text-primary">PLAYBOOK</span></span>
+        </a>
+
+        <nav class="d-none d-lg-flex align-items-center gap-1">
+          <a class="trk-nav-link" href="index.html"><i class="bi bi-grid"></i> Catálogo</a>
+          <a class="trk-nav-link" href="detalhes.html"><i class="bi bi-radar"></i> Táticas</a>
+          <a class="trk-nav-link active" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Painel</a>
+        </nav>
+      </div>
+
+      <div class="d-none d-md-flex flex-grow-1 justify-content-center">
+        <div class="input-group input-group-sm w-75">
+          <span class="input-group-text bg-dark border-secondary-subtle text-secondary">
+            <i class="bi bi-search"></i>
+          </span>
+          <input type="search" class="form-control" placeholder="Buscar agentes, armas ou mapas..." aria-label="Buscar" />
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <div class="bloco-interno d-none d-sm-flex align-items-center gap-2 px-2 py-1 font-monospace small text-nowrap">
+          <span class="badge badge-trk-neon">LIVE</span>
+          <span class="text-white fw-semibold">ViperTactics#BR1</span>
+        </div>
+
+        <a href="login.html" class="btn btn-sm btn-outline-secondary text-white d-inline-flex align-items-center gap-2 font-monospace text-nowrap">
+          <i class="bi bi-arrow-left-right"></i>
+          <span>Trocar ID</span>
+        </a>
+
+        <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir Menu">
+          <i class="bi bi-list fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OFFCANVAS MOBILE -->
+  <div class="offcanvas offcanvas-end bg-dark text-light" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    <div class="offcanvas-header border-bottom border-secondary-subtle">
+      <h5 class="offcanvas-title font-monospace fw-bold" id="menuLateralLabel">
+        <span class="badge bg-primary me-2">VP</span>VALOPLAYBOOK
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item"><a class="nav-link" href="index.html">Catálogo Tático</a></li>
+        <li class="nav-item"><a class="nav-link" href="detalhes.html">Táticas (Jett)</a></li>
+        <li class="nav-item"><a class="nav-link active text-primary fw-bold" href="dashboard.html">Painel de Estudos</a></li>
+      </ul>
+      <a href="login.html" class="btn btn-trk-red w-100 py-2">Vincular Outro Riot ID</a>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO CENTRALIZADO (CONTAINER-XL) -->
+  <main class="container-xl px-3 px-md-4 py-4">
+
+    <!-- PROFILE COVER HEADER ESTILO TRACKER.GG -->
+    <section class="trk-profile-cover p-3 p-md-4 mb-4 d-flex flex-column justify-content-end">
+      <div class="row align-items-center g-3 pt-4">
+        <div class="col-12 col-lg-6 d-flex align-items-center gap-3">
+          <div class="avatar-agente position-relative">
+            <picture>
+              <source media="(max-width: 767px)" srcset="assets/img/omen-sm.webp" type="image/webp" />
+              <img src="assets/img/omen-lg.webp" alt="Avatar ViperTactics" />
+            </picture>
+            <span class="position-absolute bottom-0 end-0 badge bg-dark border border-secondary-subtle font-mono m-1">LVL 148</span>
+          </div>
+
+          <div>
+            <div class="d-flex align-items-center flex-wrap gap-2 mb-1">
+              <h1 class="h4 mb-0 fw-bold text-white font-mono">ViperTactics<span class="text-secondary">#BR1</span></h1>
+              <span class="badge badge-trk-neon font-mono">SINCRONIZADO</span>
+            </div>
+
+            <div class="d-flex align-items-center flex-wrap gap-2 pt-1 font-mono small">
+              <span class="badge badge-trk-cyan d-inline-flex align-items-center gap-1 px-2 py-1">
+                <i class="bi bi-trophy-fill"></i>
+                Ascendente 2
+              </span>
+              <span class="text-white fw-semibold">68 / 100 RR</span>
+              <span class="text-secondary">• Peak: Imortal 1</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 KPIs -->
+        <div class="col-12 col-lg-6">
+          <div class="row g-2">
+            <div class="col-6 col-sm-3">
+              <div class="bloco-interno p-2 text-center">
+                <div class="text-uppercase text-secondary font-mono small">Taxa Vitória</div>
+                <div class="fw-bold font-mono text-neon fs-5 mt-1">58.4%</div>
+                <div class="text-secondary font-mono small">Top 12%</div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="bloco-interno p-2 text-center">
+                <div class="text-uppercase text-secondary font-mono small">Partidas</div>
+                <div class="fw-bold font-mono text-white fs-5 mt-1">142</div>
+                <div class="text-secondary font-mono small">83V - 59D</div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="bloco-interno p-2 text-center">
+                <div class="text-uppercase text-secondary font-mono small">K/D Ratio</div>
+                <div class="fw-bold font-mono text-white fs-5 mt-1">1.24</div>
+                <div class="text-secondary font-mono small">Top 18%</div>
+              </div>
+            </div>
+            <div class="col-6 col-sm-3">
+              <div class="bloco-interno p-2 text-center">
+                <div class="text-uppercase text-secondary font-mono small">Estudo / VODs</div>
+                <div class="fw-bold font-mono text-info fs-5 mt-1">24.5h</div>
+                <div class="text-secondary font-mono small">19 Setups</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKSPACE EM DUAS COLUNAS -->
+    <div class="row g-4">
+      <!-- ESQUERDA: MAPAS DE DIFICULDADE -->
+      <section class="col-12 col-lg-5">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-exclamation-triangle-fill text-primary"></i>
+            <h2 class="h6 mb-0 text-white fw-bold text-uppercase font-mono">Mapas de Dificuldade</h2>
+          </div>
+          <span class="badge badge-trk-red font-mono px-2 py-1">2 EM FOCO</span>
+        </div>
+
+        <!-- Mapa 1: Lotus -->
+        <article class="card-valo p-3 mb-3">
+          <div class="d-flex align-items-start justify-content-between mb-2">
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h3 class="h6 mb-0 text-white fw-bold font-mono">LOTUS</h3>
+                <span class="badge badge-trk-red font-mono">PRIORIDADE ALTA</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1 small">
+                <span class="text-secondary">Taxa de Vitória:</span>
+                <span class="fw-bold font-mono text-primary">38.0%</span>
+                <span class="text-secondary">(13 Jogos)</span>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-danger btn-sm px-2 py-1 d-inline-flex align-items-center gap-1" type="button">
+              <i class="bi bi-trash"></i>
+              <span>Remover</span>
+            </button>
+          </div>
+
+          <div class="mt-3">
+            <label class="form-label text-secondary mb-1 font-mono d-flex align-items-center gap-1 small text-uppercase" for="notes-lotus">
+              <i class="bi bi-pencil-square"></i> Anotações Táticas de Estudo
+            </label>
+            <textarea class="form-control form-control-sm p-2" id="notes-lotus" rows="2">Treinar retake do Bombsite C e lineups tóxicos de Viper para retardar o avanço na Cascata.</textarea>
+
+            <div class="d-flex align-items-center justify-content-between mt-2">
+              <span class="text-secondary font-mono small">Última edição: há 2 horas</span>
+              <button class="btn btn-sm badge-trk-dark text-white py-1 px-2 font-mono d-inline-flex align-items-center gap-1" type="button">
+                <i class="bi bi-floppy text-neon"></i>
+                <span>Salvar Notas</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mapa 2: Sunset -->
+        <article class="card-valo p-3 mb-3">
+          <div class="d-flex align-items-start justify-content-between mb-2">
+            <div>
+              <div class="d-flex align-items-center gap-2">
+                <h3 class="h6 mb-0 text-white fw-bold font-mono">SUNSET</h3>
+                <span class="badge bg-warning bg-opacity-25 text-warning border border-warning font-mono">DIFICULDADE MÉDIA</span>
+              </div>
+              <div class="d-flex align-items-center gap-2 mt-1 small">
+                <span class="text-secondary">Taxa de Vitória:</span>
+                <span class="fw-bold font-mono text-warning">42.0%</span>
+                <span class="text-secondary">(19 Jogos)</span>
+              </div>
+            </div>
+
+            <button class="btn btn-outline-danger btn-sm px-2 py-1 d-inline-flex align-items-center gap-1" type="button">
+              <i class="bi bi-trash"></i>
+              <span>Remover</span>
+            </button>
+          </div>
+
+          <div class="mt-3">
+            <label class="form-label text-secondary mb-1 font-mono d-flex align-items-center gap-1 small text-uppercase" for="notes-sunset">
+              <i class="bi bi-pencil-square"></i> Anotações Táticas de Estudo
+            </label>
+            <textarea class="form-control form-control-sm p-2" id="notes-sunset" rows="2">Dominar o controle da Bóia no Meio e aprender setups de one-way na entrada do B Principal.</textarea>
+
+            <div class="d-flex align-items-center justify-content-between mt-2">
+              <span class="text-secondary font-mono small">Última edição: ontem</span>
+              <button class="btn btn-sm badge-trk-dark text-white py-1 px-2 font-mono d-inline-flex align-items-center gap-1" type="button">
+                <i class="bi bi-floppy text-neon"></i>
+                <span>Salvar Notas</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Gatilho Modal JS -->
+        <div class="bloco-interno p-3 text-center">
+          <div class="font-mono text-secondary mb-2 small">Deseja adicionar mais mapas com WR crítico?</div>
+          <button class="btn btn-outline-primary btn-sm px-3 py-1 font-mono d-inline-flex align-items-center gap-1 fw-semibold" type="button" data-bs-toggle="modal" data-bs-target="#modalAdicionarMapa">
+            <i class="bi bi-plus-lg"></i>
+            <span>Adicionar Mapa ao Foco</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- DIREITA: CENTRAL DE VODS -->
+      <section class="col-12 col-lg-7">
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <div class="d-flex align-items-center gap-2">
+            <i class="bi bi-play-btn-fill text-neon fs-5"></i>
+            <h2 class="h6 mb-0 text-white fw-bold text-uppercase font-mono">Central de VODs e Guias Táticos</h2>
+          </div>
+          <span class="badge badge-trk-neon font-mono px-2 py-1">2 VODS PRONTOS</span>
+        </div>
+
+        <div class="d-flex flex-column gap-3">
+          <!-- VOD 1 -->
+          <article class="card-valo p-0 overflow-hidden">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-12 col-md-5 vod-thumb border-end border-secondary-subtle d-flex flex-column justify-content-between p-3">
+                <div class="d-flex justify-content-end">
+                  <span class="badge badge-trk-dark font-mono">#LotusViper</span>
+                </div>
+                <div class="d-flex justify-content-center my-2">
+                  <span class="rounded-circle bg-primary d-inline-flex align-items-center justify-content-center p-2 px-3">
+                    <i class="bi bi-play-fill text-white fs-4"></i>
+                  </span>
+                </div>
+                <div>
+                  <span class="badge badge-trk-neon font-mono">12:45 MIN</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-7 p-3 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <span class="badge badge-trk-red font-mono">VCT MASTERS</span>
+                    <span class="text-secondary font-mono small">Análise Pro Frame-a-Frame</span>
+                  </div>
+                  <h3 class="h6 text-white fw-bold mb-2 font-mono">Guia Definitivo de Retake no Lotus - VCT Masters</h3>
+                  <p class="text-secondary small mb-3">
+                    Análise aprofundada dos setups de retake utilizados pelas equipes internacionais. Posicionamentos de Cortina Tóxica para desarme seguro no Spike C.
+                  </p>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-secondary-subtle">
+                  <span class="text-secondary font-mono small"><i class="bi bi-eye me-1"></i>14.8k visualizações</span>
+                  <a href="detalhes.html" class="btn btn-trk-red btn-sm px-3 py-1 d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-play-circle"></i>
+                    <span>Assistir e Estudar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- VOD 2 -->
+          <article class="card-valo p-0 overflow-hidden">
+            <div class="row g-0 align-items-stretch">
+              <div class="col-12 col-md-5 vod-thumb border-end border-secondary-subtle d-flex flex-column justify-content-between p-3">
+                <div class="d-flex justify-content-end">
+                  <span class="badge badge-trk-dark font-mono">#LineupsSunset</span>
+                </div>
+                <div class="d-flex justify-content-center my-2">
+                  <span class="rounded-circle bg-success d-inline-flex align-items-center justify-content-center p-2 px-3">
+                    <i class="bi bi-play-fill text-dark fs-4"></i>
+                  </span>
+                </div>
+                <div>
+                  <span class="badge badge-trk-neon font-mono">08:30 MIN</span>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-7 p-3 d-flex flex-column justify-content-between">
+                <div>
+                  <div class="d-flex align-items-center gap-2 mb-1">
+                    <span class="badge badge-trk-neon font-mono">MAP CONTROL</span>
+                    <span class="text-secondary font-mono small">Guia de One-Ways e Smokes</span>
+                  </div>
+                  <h3 class="h6 text-white fw-bold mb-2 font-mono">Smokes Invisíveis e One-Ways em Sunset</h3>
+                  <p class="text-secondary small mb-3">
+                    Aprenda a travar avanços agressivos no B Principal com veneno unilateral na quina da caixa e posições de domínio no Meio com cortina anti-AWP.
+                  </p>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between pt-2 border-top border-secondary-subtle">
+                  <span class="text-secondary font-mono small"><i class="bi bi-eye me-1"></i>9.2k visualizações</span>
+                  <a href="detalhes.html" class="btn btn-trk-red btn-sm px-3 py-1 d-inline-flex align-items-center gap-1">
+                    <i class="bi bi-play-circle"></i>
+                    <span>Assistir e Estudar</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ID 04: MODAL DO BOOTSTRAP JS -->
+  <div class="modal fade" id="modalAdicionarMapa" tabindex="-1" aria-labelledby="modalAdicionarMapaLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark border border-secondary-subtle">
+        <div class="modal-header border-secondary-subtle">
+          <h5 class="modal-title font-monospace fw-bold text-uppercase" id="modalAdicionarMapaLabel">Adicionar Mapa ao Foco</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="selectMapaFoco" class="form-label font-monospace small text-secondary">SELECIONE O MAPA</label>
+              <select class="form-select" id="selectMapaFoco">
+                <option value="ascent">Ascent</option>
+                <option value="bind">Bind</option>
+                <option value="haven">Haven</option>
+                <option value="breeze">Breeze</option>
+              </select>
+            </div>
+            <div class="mb-0">
+              <label for="notaNovoMapa" class="form-label font-monospace small text-secondary">ANOTAÇÃO TÁTICA INICIAL</label>
+              <textarea class="form-control" id="notaNovoMapa" rows="3" placeholder="Ex: Melhorar posicionamento pós-plant no Bomb A..."></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer border-secondary-subtle">
+          <button type="button" class="btn btn-outline-secondary btn-sm text-white" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-trk-red btn-sm px-3" data-bs-dismiss="modal">Salvar no Painel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVEGAÇÃO INFERIOR MOBILE -->
+  <nav class="navbar fixed-bottom trk-navbar border-top border-secondary-subtle d-lg-none py-1">
+    <div class="container justify-content-around text-center small">
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="index.html">
+        <i class="bi bi-grid fs-5"></i>
+        <span>Catálogo</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="detalhes.html">
+        <i class="bi bi-radar fs-5"></i>
+        <span>Táticas</span>
+      </a>
+      <a class="text-primary fw-bold text-decoration-none d-flex flex-column align-items-center" href="dashboard.html">
+        <i class="bi bi-bar-chart-line fs-5"></i>
+        <span>Painel</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="login.html">
+        <i class="bi bi-person fs-5"></i>
+        <span>Perfil</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

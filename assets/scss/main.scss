@@ -1,0 +1,9 @@
+// 1. Nossas variáveis vêm ANTES do Bootstrap para sobrescrever os valores !default
+@import "variables";
+
+// 2. Importa o Bootstrap 5 instalado via NPM
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+// 3. Importa nossos mixins/funções e regras customizadas
+@import "mixins";
+@import "layout";

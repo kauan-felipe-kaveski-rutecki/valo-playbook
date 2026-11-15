@@ -1,0 +1,17 @@
+// ID 07: Função customizada de escala modular de espaçamento
+@function espaco($multiplicador) {
+  @return $multiplicador * 0.5rem;
+}
+
+// ID 07: Mixin reutilizável para superfícies táticas
+@mixin superficie-tatica($cor-borda-hover: $primary) {
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    border-color: $cor-borda-hover;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+  }
+}

@@ -1,0 +1,299 @@
+body {
+  background-color: $body-bg;
+  color: $body-color;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 4.5rem;
+
+  @media (min-width: 992px) {
+    padding-bottom: 0;
+  }
+}
+
+// Navbar estilo Tracker.gg
+.trk-navbar {
+  background-color: $dark;
+  border-bottom: 1px solid $border-color;
+  min-height: 3.75rem;
+  z-index: 1040;
+}
+
+.trk-nav-link {
+  color: $secondary;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.5rem 0.85rem;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  transition: color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    color: $light;
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+
+  &.active {
+    color: $light;
+    border-bottom-color: $primary;
+  }
+}
+
+// ID 05: Unidades relativas (vh, %, rem) + Capa visual estilo Tracker.gg
+.hero-tatico {
+  min-height: 26vh;
+  width: 100%;
+  padding: espaco(4) 0;
+  background: linear-gradient(90deg, rgba($body-bg, 0.96) 0%, rgba($body-bg, 0.84) 55\%, rgba($primary, 0.18) 100%),
+              url("../img/ascent-lg.webp") center/cover no-repeat;
+  border-bottom: 1px solid $border-color;
+}
+
+// Capa estilo perfil Tracker.gg (Dashboard)
+.trk-profile-cover {
+  min-height: 22vh;
+  background: linear-gradient(180deg, rgba($body-bg, 0.45) 0\%, rgba($card-bg, 0.98) 100%),
+              url("../img/ascent-lg.webp") center 30%/cover no-repeat;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+}
+
+// ID 08: Tipografia fluida com clamp()
+.titulo-fluido {
+  font-size: clamp(1.65rem, 3.2vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.subtitulo-fluido {
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  color: $secondary;
+  line-height: 1.5;
+}
+
+// ID 07: Reaproveitamento do @mixin superficie-tatica
+.card-valo {
+  @include superficie-tatica(#3b4d63);
+  padding: espaco(3);
+}
+
+.painel-metrica {
+  @include superficie-tatica($primary);
+  padding: espaco(3);
+}
+
+.bloco-interno {
+  background-color: #121a23;
+  border: 1px solid $border-color;
+  border-radius: 0.375rem;
+}
+
+.bg-card-surface {
+  background-color: $card-bg;
+}
+
+// Matriz de 4 estatísticas estilo Tracker.gg
+.trk-stat-grid {
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  border-radius: 0.5rem;
+  overflow: hidden;
+
+  .trk-stat-box {
+    padding: espaco(3) espaco(4);
+
+    @media (min-width: 768px) {
+      &:not(:last-child) {
+        border-right: 1px solid $border-color;
+      }
+    }
+  }
+}
+
+// Sub-navegação horizontal (OVERVIEW | ABILITIES | SETUPS | PERFORMANCE)
+.trk-subnav {
+  border-top: 1px solid $border-color;
+  margin-top: espaco(3);
+
+  .nav-link {
+    color: $secondary;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.1rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    white-space: nowrap;
+
+    &:hover {
+      color: $light;
+    }
+
+    &.active {
+      color: $light;
+      background: transparent;
+      border-bottom-color: $primary;
+    }
+  }
+}
+
+// Barra segmentada estilo Tracker.gg (Competitive | Unrated | Deathmatch | Premier)
+.trk-segmented-bar {
+  background-color: #131820;
+  border: 1px solid $border-color;
+  border-radius: 0.375rem;
+  padding: 0.2rem;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.2rem;
+
+  .nav-link {
+    color: $secondary;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.45rem 1.1rem;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease;
+
+    &:hover {
+      color: $light;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    &.active {
+      background-color: $primary;
+      color: $light;
+    }
+  }
+}
+
+// Badges e textos neon
+.text-neon {
+  color: $success !important;
+}
+
+.badge-trk-red {
+  background-color: rgba($primary, 0.16);
+  color: $primary;
+  border: 1px solid rgba($primary, 0.35);
+}
+
+.badge-trk-neon {
+  background-color: rgba($success, 0.14);
+  color: $success;
+  border: 1px solid rgba($success, 0.3);
+}
+
+.badge-trk-cyan {
+  background-color: rgba($info, 0.16);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.badge-trk-dark {
+  background-color: #121a23;
+  color: $secondary;
+  border: 1px solid $border-color;
+}
+
+// Botão principal vermelho estilo Tracker.gg
+.btn-trk-red {
+  background-color: $primary;
+  border: 1px solid $primary;
+  color: $light;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #e03241;
+    border-color: #e03241;
+    color: $light;
+    box-shadow: 0 0 18px rgba($primary, 0.45);
+  }
+}
+
+.btn-trk-icon {
+  width: 2rem;
+  height: 2rem;
+  background-color: $card-bg;
+  border: 1px solid $border-color;
+  color: $secondary;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+
+  &:hover {
+    color: $light;
+    border-color: #3b4d63;
+  }
+}
+
+// ID 09: Responsividade de imagens com fundo radial tático para destaque dos agentes
+.card-img-wrapper {
+  width: 100%;
+  height: 11.5rem;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 35%, rgba($primary, 0.22) 0%, #101620 75%);
+  border-bottom: 1px solid $border-color;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.25s ease;
+  }
+}
+
+.card-valo:hover .card-img-wrapper img {
+  transform: scale(1.04);
+}
+
+.avatar-agente {
+  width: 5.5rem;
+  height: 5.5rem;
+  border: 2px solid $primary;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: radial-gradient(circle, rgba($primary, 0.25), #101620);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+// Thumbnail dos VODs no Dashboard
+.vod-thumb {
+  min-height: 11.5rem;
+  background: linear-gradient(135deg, rgba($body-bg, 0.55) 0\%, rgba($body-bg, 0.85) 100%),
+              url("../img/ascent-lg.webp") center/cover no-repeat;
+}
+
+// ID 03: Layout responsivo com CSS Grid puro (2x2)
+.grade-habilidades {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: espaco(3);
+
+  @media (min-width: 576px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

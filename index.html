@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ValoPlaybook — Catálogo Tático Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" integrity="sha384-Bk5cbLkZQ5raZ0+H2/+VbfYx3WpvxvQK4zqXZr7sYODuaX7bKXoSOnipQxkaS8sv" crossorigin="anonymous" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+
+  <!-- NAVBAR CENTRALIZADA -->
+  <header class="trk-navbar sticky-top d-flex align-items-center">
+    <div class="container-xl px-3 px-md-4 d-flex align-items-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-4">
+        <a class="d-flex align-items-center gap-2 text-decoration-none fw-bold text-white text-uppercase font-monospace text-nowrap" href="index.html">
+          <span class="badge bg-primary">VP</span>
+          <span>VALO<span class="text-primary">PLAYBOOK</span></span>
+        </a>
+
+        <nav class="d-none d-lg-flex align-items-center gap-1">
+          <a class="trk-nav-link active" href="index.html"><i class="bi bi-grid"></i> Catálogo</a>
+          <a class="trk-nav-link" href="detalhes.html"><i class="bi bi-radar"></i> Táticas</a>
+          <a class="trk-nav-link" href="dashboard.html"><i class="bi bi-bar-chart-line"></i> Painel</a>
+        </nav>
+      </div>
+
+      <div class="d-none d-md-flex flex-grow-1 justify-content-center">
+        <div class="input-group input-group-sm w-75">
+          <span class="input-group-text bg-dark border-secondary-subtle text-secondary">
+            <i class="bi bi-search"></i>
+          </span>
+          <input type="search" class="form-control" placeholder="Buscar agentes, armas ou mapas..." aria-label="Buscar" />
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-2">
+        <div class="bloco-interno d-none d-sm-flex align-items-center gap-2 px-2 py-1 font-monospace small text-nowrap">
+          <span class="badge badge-trk-neon">PRO V4</span>
+          <span class="text-white fw-semibold">Operator#BR1</span>
+        </div>
+
+        <a href="login.html" class="btn btn-trk-red btn-sm px-3 py-2 d-inline-flex align-items-center gap-2">
+          <i class="bi bi-person-circle"></i>
+          <span>Sign In</span>
+        </a>
+
+        <button class="btn btn-sm btn-outline-secondary d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral" aria-controls="menuLateral" aria-label="Abrir Menu">
+          <i class="bi bi-list fs-5"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- OFFCANVAS MOBILE -->
+  <div class="offcanvas offcanvas-end bg-dark text-light" tabindex="-1" id="menuLateral" aria-labelledby="menuLateralLabel">
+    <div class="offcanvas-header border-bottom border-secondary-subtle">
+      <h5 class="offcanvas-title font-monospace fw-bold" id="menuLateralLabel">
+        <span class="badge bg-primary me-2">VP</span>VALOPLAYBOOK
+      </h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body d-flex flex-column justify-content-between">
+      <ul class="navbar-nav gap-2">
+        <li class="nav-item"><a class="nav-link active text-primary fw-bold" href="index.html">Catálogo Tático</a></li>
+        <li class="nav-item"><a class="nav-link" href="detalhes.html">Táticas (Jett)</a></li>
+        <li class="nav-item"><a class="nav-link" href="dashboard.html">Painel de Estudos</a></li>
+      </ul>
+      <a href="login.html" class="btn btn-trk-red w-100 py-2">Sign In</a>
+    </div>
+  </div>
+
+  <!-- HERO BANNER COM ARTE DE FUNDO -->
+  <section class="hero-tatico d-flex align-items-center">
+    <div class="container-xl px-3 px-md-4">
+      <div class="d-flex align-items-center gap-2 mb-2">
+        <span class="badge badge-trk-red font-monospace">TRACKER PROTOCOL</span>
+        <span class="font-monospace text-uppercase text-secondary small">• META ATUALIZADO V8.11</span>
+      </div>
+
+      <h1 class="titulo-fluido text-uppercase text-white mb-2">DOMINE O VALORANT</h1>
+      <p class="subtitulo-fluido mb-4 col-lg-7">
+        Playbooks estratégicos, guias de lineups verificados e métricas analíticas em tempo real para acelerar sua subida de elo.
+      </p>
+
+      <div class="d-flex flex-wrap align-items-center gap-3">
+        <a href="dashboard.html" class="btn btn-trk-red px-4 py-2 d-inline-flex align-items-center gap-2">
+          <span>VER MEUS ESTUDOS</span>
+          <i class="bi bi-arrow-right"></i>
+        </a>
+        <div class="d-none d-sm-flex align-items-center gap-3 font-monospace small text-secondary">
+          <span><strong class="text-white">24</strong> Agentes</span>
+          <span>•</span>
+          <span><strong class="text-white">18</strong> Armas</span>
+          <span>•</span>
+          <span><strong class="text-white">11</strong> Mapas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO CENTRALIZADO -->
+  <main class="container-xl px-3 px-md-4 py-4">
+    <!-- BARRA SEGMENTADA ESTILO TRACKER.GG (ID 04: Nav-pills JS) -->
+    <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+      <ul class="nav trk-segmented-bar font-monospace" id="modosTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="comp-tab" data-bs-toggle="pill" data-bs-target="#pane-comp" type="button" role="tab">Competitive</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="unrated-tab" data-bs-toggle="pill" data-bs-target="#pane-unrated" type="button" role="tab">Unrated</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="dm-tab" data-bs-toggle="pill" data-bs-target="#pane-dm" type="button" role="tab">Deathmatch</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="premier-tab" data-bs-toggle="pill" data-bs-target="#pane-premier" type="button" role="tab">Premier</button>
+        </li>
+      </ul>
+
+      <div class="d-none d-md-flex align-items-center gap-2 font-monospace small text-secondary">
+        <span>ORDENAR POR:</span>
+        <span class="badge badge-trk-cyan">WIN RATE (DESC)</span>
+      </div>
+    </div>
+
+    <!-- GRID DE 4 CARDS -->
+    <div class="tab-content" id="modosTabContent">
+      <div class="tab-pane fade show active" id="pane-comp" role="tabpanel">
+        <div class="row g-3">
+
+          <!-- Card 1: Jett -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-valo p-0 overflow-hidden h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="card-img-wrapper position-relative">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="assets/img/jett-sm.webp" type="image/webp" />
+                    <img src="assets/img/jett-lg.webp" alt="Agente Jett" loading="lazy" />
+                  </picture>
+                  <span class="badge bg-primary position-absolute top-0 start-0 m-2 font-monospace">DUELISTA</span>
+                </div>
+                <div class="p-3 pb-0">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="h6 fw-bold text-white mb-0">Jett</h2>
+                    <span class="font-monospace text-secondary small">CORE PICK</span>
+                  </div>
+                  <div class="font-monospace small mb-3">
+                    <div class="d-flex justify-content-between py-1 border-bottom border-secondary-subtle">
+                      <span class="text-secondary">Win Rate:</span>
+                      <span class="fw-bold text-neon">52.4%</span>
+                    </div>
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="text-secondary">Pick Rate:</span>
+                      <span class="fw-bold text-white">14.8%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 pt-0">
+                <a href="detalhes.html" class="btn btn-sm badge-trk-dark text-primary w-100 py-2 font-monospace fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <span>VER DETALHES</span>
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 2: Omen -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-valo p-0 overflow-hidden h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="card-img-wrapper position-relative">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="assets/img/omen-sm.webp" type="image/webp" />
+                    <img src="assets/img/omen-lg.webp" alt="Agente Omen" loading="lazy" />
+                  </picture>
+                  <span class="badge badge-trk-dark position-absolute top-0 start-0 m-2 font-monospace">CONTROLADOR</span>
+                </div>
+                <div class="p-3 pb-0">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="h6 fw-bold text-white mb-0">Omen</h2>
+                    <span class="font-monospace text-secondary small">SMOKES</span>
+                  </div>
+                  <div class="font-monospace small mb-3">
+                    <div class="d-flex justify-content-between py-1 border-bottom border-secondary-subtle">
+                      <span class="text-secondary">Win Rate:</span>
+                      <span class="fw-bold text-neon">51.1%</span>
+                    </div>
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="text-secondary">Pick Rate:</span>
+                      <span class="fw-bold text-white">13.4%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 pt-0">
+                <a href="detalhes.html" class="btn btn-sm badge-trk-dark text-primary w-100 py-2 font-monospace fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <span>VER DETALHES</span>
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 3: Reyna -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-valo p-0 overflow-hidden h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="card-img-wrapper position-relative">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="assets/img/reyna-sm.webp" type="image/webp" />
+                    <img src="assets/img/reyna-lg.webp" alt="Agente Reyna" loading="lazy" />
+                  </picture>
+                  <span class="badge bg-primary position-absolute top-0 start-0 m-2 font-monospace">DUELISTA</span>
+                </div>
+                <div class="p-3 pb-0">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="h6 fw-bold text-white mb-0">Reyna</h2>
+                    <span class="font-monospace text-secondary small">RANKED</span>
+                  </div>
+                  <div class="font-monospace small mb-3">
+                    <div class="d-flex justify-content-between py-1 border-bottom border-secondary-subtle">
+                      <span class="text-secondary">Win Rate:</span>
+                      <span class="fw-bold text-neon">50.9%</span>
+                    </div>
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="text-secondary">Pick Rate:</span>
+                      <span class="fw-bold text-white">16.8%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 pt-0">
+                <a href="detalhes.html" class="btn btn-sm badge-trk-dark text-primary w-100 py-2 font-monospace fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <span>VER DETALHES</span>
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          <!-- Card 4: Ascent -->
+          <div class="col-12 col-sm-6 col-lg-3">
+            <article class="card-valo p-0 overflow-hidden h-100 d-flex flex-column justify-content-between">
+              <div>
+                <div class="card-img-wrapper position-relative">
+                  <picture>
+                    <source media="(max-width: 767px)" srcset="assets/img/ascent-sm.webp" type="image/webp" />
+                    <img src="assets/img/ascent-lg.webp" alt="Mapa Ascent" loading="lazy" />
+                  </picture>
+                  <span class="badge bg-success text-dark fw-bold position-absolute top-0 start-0 m-2 font-monospace">MAPA S-TIER</span>
+                </div>
+                <div class="p-3 pb-0">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="h6 fw-bold text-white mb-0">Ascent</h2>
+                    <span class="font-monospace text-secondary small">COMPETITIVO</span>
+                  </div>
+                  <div class="font-monospace small mb-3">
+                    <div class="d-flex justify-content-between py-1 border-bottom border-secondary-subtle">
+                      <span class="text-secondary">Defesa WR:</span>
+                      <span class="fw-bold text-neon">53.2%</span>
+                    </div>
+                    <div class="d-flex justify-content-between py-1">
+                      <span class="text-secondary">Pick Rate:</span>
+                      <span class="fw-bold text-white">16.5%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="p-3 pt-0">
+                <a href="dashboard.html" class="btn btn-sm badge-trk-dark text-primary w-100 py-2 font-monospace fw-bold d-flex align-items-center justify-content-center gap-1">
+                  <span>VER DETALHES</span>
+                  <i class="bi bi-chevron-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pane-unrated" role="tabpanel">
+        <div class="card-valo">
+          <h3 class="h6 fw-bold text-uppercase text-white">Modo Sem Classificação (Unrated)</h3>
+          <p class="text-secondary small mb-0">Estatísticas globais de partidas casuais atualizadas no Patch V8.11.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pane-dm" role="tabpanel">
+        <div class="card-valo">
+          <h3 class="h6 fw-bold text-uppercase text-white">Mata-Mata (Deathmatch)</h3>
+          <p class="text-secondary small mb-0">Métricas de aquecimento e precisão de primeiro tiro.</p>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="pane-premier" role="tabpanel">
+        <div class="card-valo">
+          <h3 class="h6 fw-bold text-uppercase text-white">Modo Premier</h3>
+          <p class="text-secondary small mb-0">Composições de torneio e taxas de vitória por mapa.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- NAVEGAÇÃO INFERIOR MOBILE -->
+  <nav class="navbar fixed-bottom trk-navbar border-top border-secondary-subtle d-lg-none py-1">
+    <div class="container justify-content-around text-center small">
+      <a class="text-primary fw-bold text-decoration-none d-flex flex-column align-items-center" href="index.html">
+        <i class="bi bi-grid fs-5"></i>
+        <span>Catálogo</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="detalhes.html">
+        <i class="bi bi-radar fs-5"></i>
+        <span>Táticas</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="dashboard.html">
+        <i class="bi bi-bar-chart-line fs-5"></i>
+        <span>Painel</span>
+      </a>
+      <a class="text-secondary text-decoration-none d-flex flex-column align-items-center" href="login.html">
+        <i class="bi bi-person fs-5"></i>
+        <span>Perfil</span>
+      </a>
+    </div>
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

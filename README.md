@@ -20,7 +20,7 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 ## 🌐 Site em Produção - GitHub Pages
 
-*(Link será disponibilizado posteriormente após o deploy)*
+[🔗 Acessar ValoPlaybook Online](https://kauan-felipe-kaveski-rutecki.github.io/valo-playbook/)
 
 ## 💻 Tecnologias e Dependências
 

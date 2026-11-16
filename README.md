@@ -4,7 +4,7 @@
 
 Este projeto tem como objetivo implementar progressivamente e de forma didática uma aplicação web inspirada em um guia tático de Valorant, sendo o diferencial a criação de um painel de estudo personalizado, focando nos mapas e situações de maior dificuldade registradas pelo próprio jogador.
 
-O frontend da aplicação foi desenvolvido com HTML5, Sass (SCSS), Bootstrap 5 e JavaScript. Nas próximas etapas, os dados oficiais do jogo serão consumidos de forma dinâmica através da integração com uma API pública (Valorant-API), enquanto o backend/banco de dados será simulado utilizando **JSON Server (`db.json`)** para persistência dos registros e **Web Storage (`localStorage`)** para controle de sessão do usuário no navegador.
+O frontend da aplicação foi desenvolvido com HTML5, Sass (SCSS), Bootstrap 5, JavaScript e jQuery. Os dados oficiais do jogo são consumidos de forma dinâmica através da integração com uma API pública (**Valorant-API**), enquanto o backend/banco de dados é simulado utilizando **JSON Server (`db.json`)** para persistência dos registros e **Web Storage (`localStorage` / `sessionStorage`)** para controle de sessão do usuário no navegador.
 
 ## 📚 Documentação do Projeto
 
@@ -27,22 +27,24 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 - **Framework CSS & Ícones:** Bootstrap (`v5.3.3`) e Bootstrap Icons (`v1.13.1`)
 - **Pré-processador CSS:** Sass (`sass` via NPM) com arquitetura modular (`_variables.scss`, `_mixins.scss`, `_layout.scss` e `main.scss`)
 - **Otimização de Mídia:** Imagens responsivas em formato `.webp` com `<picture>` e `srcset`
-- **API Pública Externa (Etapa 3):** Valorant-API (`v1`)
-- **JavaScript & Persistência (Etapa 3):**
+- **Bibliotecas JavaScript:** jQuery (`v3.7.1`) e jQuery Mask Plugin (`v1.14.16`)
+- **Qualidade de Código:** ESLint (`v9`) e Prettier (`v3`)
+- **API Pública Externa:** Valorant-API (`v1`)
+- **JavaScript & Persistência:**
   - **Fetch API** — Para realizar requisições assíncronas à Valorant-API e à API local.
   - **JSON Server** — Para simular a API REST e persistir os dados no arquivo `db.json`.
-  - **Web Storage (`localStorage`)** — Para manter a sessão do usuário autenticado localmente.
+  - **Web Storage (`localStorage` e `sessionStorage`)** — Para manter a sessão do usuário autenticado localmente.
 
 ### 💡 Justificativa das Escolhas
 
 - **Framework CSS — Bootstrap 5.3.3**:
-  A escolha do Bootstrap 5 se deve à sua maturidade, excelente suporte à abordagem *mobile-first* e biblioteca robusta de componentes prontos (cards, navbars, offcanvas, modais, tabs e collapse). A versão 5 não depende de jQuery, utiliza CSS moderno, possui licença MIT amigável e é mantida ativamente no GitHub, garantindo estabilidade e facilidade de manutenção.
+  A escolha do Bootstrap 5 se deve à sua maturidade, excelente suporte à abordagem *mobile-first* e biblioteca robusta de componentes prontos (cards, navbars, offcanvas, modais, tabs e collapse). Possui licença MIT amigável e é mantido ativamente no GitHub, garantindo estabilidade e facilidade de manutenção.
 
 - **Pré-processador CSS — Sass (SCSS)**:
   Utilizado para centralizar os tokens do Design System (*Tactical Dark Ops*) em variáveis, criar mixins reutilizáveis para superfícies e bordas táticas e aplicar funções de espaçamento, gerando um CSS final limpo e padronizado em `assets/css/main.css`.
 
 - **API Pública — Valorant-API (`valorant-api.com`)**:
-  Para alimentar o *ValoPlaybook* com dados reais do jogo, foi selecionada a **Valorant-API**. Ela é uma API pública e gratuita que não exige chave de autenticação (API Key) para consumo básico. Fornece endpoints completos com dados atualizados a cada patch do jogo (agentes, funções, habilidades, armas e mapas) acompanhados de imagens de alta qualidade em formato JSON.
+  Para alimentar o *ValoPlaybook* com dados reais do jogo, foi selecionada a **Valorant-API**. Ela é uma API pública e gratuita que não exige chave de autenticação (API Key) para consumo básico. Fornece endpoints completos com dados atualizados a cada patch do jogo (agentes, funções, habilidades e imagens) em formato JSON com suporte a `pt-BR`.
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
@@ -61,10 +63,10 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 
 #### RA2 - Realizar tratamento de formulários e aplicar validações customizadas no lado cliente.
 
-- [ ] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
-- [ ] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, telefone, datas, etc.)
-- [ ] ID 13 - Utiliza elementos de seleção em formulários (checkbox, radio, select) para coleta de dados.
-- [ ] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
+- [x] ID 11 - Implementa validação HTML nativa (campos obrigatórios, tipos, limites de caracteres) com mensagens de erro/sucesso no lado cliente.
+- [x] ID 12 - Aplica expressões regulares (REGEX) para validações customizadas (e-mail, telefone, datas, etc.)
+- [x] ID 13 - Utiliza elementos de seleção em formulários (checkbox, radio, select) para coleta de dados.
+- [x] ID 14 - Implementa leitura e escrita no Web Storage (localStorage/sessionStorage) para persistir dados localmente.
 
 #### RA3 - Aplicar ferramentas para otimização do processo de desenvolvimento web.
 
@@ -72,22 +74,23 @@ Para entender as regras de negócio, o escopo e a arquitetura técnica da aplica
 - [x] ID 16 - Utiliza boas práticas de versionamento no Git/GitHub (branch main ou branches específicos, uso de .gitignore).
 - [x] ID 17 - Mantém um README.md padronizado, conforme template da disciplina, com checklist preenchido.
 - [x] ID 18 - Organiza arquivos do projeto de forma modular, seguindo padrão de exemplo fornecido.
-- [ ] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronização do código.
+- [x] ID 19 - Configura linters e formatadores (ESLint, Prettier) para manter qualidade e padronização do código.
 
 #### RA4 - Aplicar bibliotecas de funções e componentes em JavaScript para aprimorar a interatividade de páginas web.
 
-- [ ] ID 20 - Utiliza jQuery para manipulação do DOM e interatividade (eventos, animações, manipulação de elementos)
-- [ ] ID 21 - Integra e configura um plugin jQuery relevante (ex.: jQuery Mask Plugin).
+- [x] ID 20 - Utiliza jQuery para manipulação do DOM e interatividade (eventos, animações, manipulação de elementos)
+- [x] ID 21 - Integra e configura um plugin jQuery relevante (ex.: jQuery Mask Plugin).
 
 #### RA5 - Efetuar requisições assíncronas para uma API fake e APIs públicas, permitindo a obtenção e manipulação de dados dinamicamente.
 
-- [ ] ID 22 - Realiza requisições assíncronas para uma API fake (ex.: JSON Server) para persistir dados de um formulário.
-- [ ] ID 23 - Realiza requisições assíncronas para uma API fake para exibir dados na página.
-- [ ] ID 24 - Realiza requisições assíncronas para APIs públicas reais (OpenWeather, ViaCEP etc.), exibindo os dados e tratando erros.
+- [x] ID 22 - Realiza requisições assíncronas para uma API fake (ex.: JSON Server) para persistir dados de um formulário.
+- [x] ID 23 - Realiza requisições assíncronas para uma API fake para exibir dados na página.
+- [x] ID 24 - Realiza requisições assíncronas para APIs públicas reais (OpenWeather, ViaCEP etc.), exibindo os dados e tratando erros.
 
 ## 🚀 Manual de execução
 
-1. Clonar o repositório:
+1. Clonar o repositório e instalar as dependências:
    ```bash
-   git clone [https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook.git](https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook.git)
+   git clone https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook.git
    cd valo-playbook
+   npm install

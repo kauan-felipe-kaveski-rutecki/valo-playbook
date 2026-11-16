@@ -9,14 +9,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch assets/scss/main.scss:assets/css/main.css",
-    "build": "sass assets/scss/main.scss:assets/css/main.css"
+    "build": "sass assets/scss/main.scss assets/css/main.css --style=compressed",
+    "api": "json-server --watch db.json --port 3000",
+    "lint": "eslint assets/js",
+    "format": "prettier --write \"assets/js/**/*.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kauan-felipe-kaveski-rutecki/valo-playbook.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kauan Felipe Kaveski Rutecki",
   "license": "ISC",
   "type": "commonjs",
   "bugs": {
@@ -26,5 +29,10 @@
   "dependencies": {
     "bootstrap": "^5.3.3",
     "sass": "^1.108.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "json-server": "^0.17.4",
+    "prettier": "^3.3.3"
   }
 }

@@ -1,0 +1,24 @@
+{
+  "mapas": [
+    {
+      "id": 1,
+      "nome": "LOTUS",
+      "prioridade": "PRIORIDADE ALTA",
+      "winRate": "38.0%",
+      "jogos": 13,
+      "metaHoras": "04:30",
+      "notas": "Treinar retake do Bombsite C e lineups tóxicos de Viper para retardar o avanço na Cascata.",
+      "atualizadoEm": "há 2 horas"
+    },
+    {
+      "id": 2,
+      "nome": "SUNSET",
+      "prioridade": "DIFICULDADE MÉDIA",
+      "winRate": "42.0%",
+      "jogos": 19,
+      "metaHoras": "03:00",
+      "notas": "Dominar o controle da Bóia no Meio e aprender setups de one-way na entrada do B Principal.",
+      "atualizadoEm": "ontem"
+    }
+  ]
+}

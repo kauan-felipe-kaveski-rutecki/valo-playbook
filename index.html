@@ -34,14 +34,14 @@
           <span class="input-group-text bg-dark border-secondary-subtle text-secondary">
             <i class="bi bi-search"></i>
           </span>
-          <input type="search" class="form-control" placeholder="Buscar agentes, armas ou mapas..." aria-label="Buscar" />
+          <input type="search" id="buscaGlobalInput" class="form-control" placeholder="Buscar agentes, armas ou mapas..." aria-label="Buscar" />
         </div>
       </div>
 
       <div class="d-flex align-items-center gap-2">
         <div class="bloco-interno d-none d-sm-flex align-items-center gap-2 px-2 py-1 font-monospace small text-nowrap">
           <span class="badge badge-trk-neon">PRO V4</span>
-          <span class="text-white fw-semibold">Operator#BR1</span>
+          <span class="text-white fw-semibold js-user-riotid">Operator#BR1</span>
         </div>
 
         <a href="login.html" class="btn btn-trk-red btn-sm px-3 py-2 d-inline-flex align-items-center gap-2">
@@ -79,7 +79,7 @@
     <div class="container-xl px-3 px-md-4">
       <div class="d-flex align-items-center gap-2 mb-2">
         <span class="badge badge-trk-red font-monospace">TRACKER PROTOCOL</span>
-        <span class="font-monospace text-uppercase text-secondary small">• META ATUALIZADO V8.11</span>
+        <span class="font-monospace text-uppercase text-secondary small">META ATUALIZADO V8.11</span>
       </div>
 
       <h1 class="titulo-fluido text-uppercase text-white mb-2">DOMINE O VALORANT</h1>
@@ -307,6 +307,18 @@
     </div>
   </main>
 
+  <!-- SEÇÃO DINÂMICA VIA API PÚBLICA (ID 24: VALORANT-API) -->
+  <section class="container-xl px-3 px-md-4 pb-5 mb-4">
+    <div class="d-flex align-items-center justify-content-between mb-3 pt-3 border-top border-secondary-subtle">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-cloud-arrow-down-fill text-primary"></i>
+        <h2 class="h6 mb-0 text-white fw-bold text-uppercase font-mono">Elenco Oficial (Valorant-API)</h2>
+      </div>
+      <span id="statusApiValorant" class="badge badge-trk-cyan font-mono">SINCRONIZANDO...</span>
+    </div>
+    <div class="row g-3" id="listaAgentesApi"></div>
+  </section>
+
   <!-- NAVEGAÇÃO INFERIOR MOBILE -->
   <nav class="navbar fixed-bottom trk-navbar border-top border-secondary-subtle d-lg-none py-1">
     <div class="container justify-content-around text-center small">
@@ -330,5 +342,8 @@
   </nav>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
